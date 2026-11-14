@@ -24,7 +24,13 @@ export default defineConfig({
         scope: base,
         icons: [{ src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' }],
       },
-      workbox: { maximumFileSizeToCacheInBytes: 4 * 1024 * 1024, navigateFallback: `${base}index.html` },
+      workbox: {
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
+        navigateFallback: `${base}index.html`,
+        globIgnores: ['**/models/**'],
+        // Face models are large: cache them the first time face matching is used.
+        runtimeCaching: [{ urlPattern: /\/models\//, handler: 'CacheFirst', options: { cacheName: 'face-models' } }],
+      },
     }),
   ],
   test: { environment: 'node', include: ['tests/**/*.test.ts'] },

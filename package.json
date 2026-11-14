@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "A personal oshikatsu log: chekis, 特典会 memos, lives, marche, merch and recaps.",
   "scripts": {
+    "predev": "node scripts/copy-models.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/copy-models.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run"
