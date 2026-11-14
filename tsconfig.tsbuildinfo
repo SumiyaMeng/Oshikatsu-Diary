@@ -1,1 +1,0 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/components/Scanner.tsx","./src/components/ui.tsx","./src/lib/db.ts","./src/lib/face.ts","./src/lib/format.ts","./src/lib/hooks.ts","./src/lib/logic.ts","./src/lib/scanner.ts","./src/lib/sync.ts","./src/lib/toast.ts","./src/lib/types.ts","./tests/logic.test.ts","./tests/scanner.test.ts"],"version":"5.8.3"}
