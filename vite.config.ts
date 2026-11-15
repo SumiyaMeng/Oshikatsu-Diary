@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // GitHub Pages serves the app from /<repo>/. Override with BASE=/ for local use.
-const base = process.env.BASE ?? '/oshi-log/';
+const base = process.env.BASE ?? '/Oshikatsu-Diary/';
 
 export default defineConfig({
   base,

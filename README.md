@@ -1,5 +1,7 @@
 # Oshi Log
 
+This is where I store my oshikatsu stuff: a personal log app, built for my own use.
+
 A personal oshikatsu log for live-idol fans. Log every 特典会 loop and what you talked about, scan your chekis, keep track of lives, marche, merch and tickets you bought ahead, and look back with monthly, quarterly and yearly recaps.
 
 It runs in the browser and installs to your phone's home screen. Your entries stay on your device, and optionally sync through your own Supabase project.
@@ -18,7 +20,7 @@ It runs in the browser and installs to your phone's home screen. Your entries st
 
 ## Use it
 
-Open the app at `https://<your-github-username>.github.io/oshi-log/`.
+Open the app at **https://sansire.github.io/Oshikatsu-Diary/**.
 
 - **iPhone:** open it in Safari → Share → **Add to Home Screen**.
 - **Android:** open it in Chrome → **Install app**.
