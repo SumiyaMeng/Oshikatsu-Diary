@@ -20,7 +20,7 @@ It runs in the browser and installs to your phone's home screen. Your entries st
 
 ## Use it
 
-Open the app at **https://sansire.github.io/Oshikatsu-Diary/**.
+Open the app at **https://sumiyameng.github.io/Oshikatsu-Diary/**.
 
 - **iPhone:** open it in Safari → Share → **Add to Home Screen**.
 - **Android:** open it in Chrome → **Install app**.
