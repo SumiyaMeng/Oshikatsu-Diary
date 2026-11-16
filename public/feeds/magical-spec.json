@@ -1,0 +1,2462 @@
+{
+ "id": "magical-spec",
+ "group": "MAGICAL SPEC",
+ "source": "TimeTree public calendar",
+ "url": "https://timetreeapp.com/public_calendars/magicalspec_official",
+ "skip": [
+  "マジスペ秋祭り"
+ ],
+ "events": [
+  {
+   "date": "2025-08-01",
+   "title": "【東京】TIF2025出演前日特典会",
+   "venue": "渋谷No29(宮下パークビル)貸し会議室",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-02",
+   "title": "【東京】TOKYO IDOL FESTIVAL 2025 supported by にしたんクリニック",
+   "venue": "お台場",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-04",
+   "title": "【東京】TIF2025出演前日特典会",
+   "venue": "ふれあい貸し会議室 渋谷No89",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-07",
+   "title": "【福岡】HelloYouth prime",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-09",
+   "title": "【山口】RISE AGEIN vol.03",
+   "venue": "RISING HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-10",
+   "title": "【福岡】LUNARIUM 7th Anniversary LIVE",
+   "venue": "スカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-11",
+   "title": "【福岡】HELLOMAGICAL",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-12",
+   "title": "【東京】IDOL ∞ INFINITY HOLIDAY SP",
+   "venue": "シティホール&ギャラリー 五反田 (CITY HALL & GALLERY GOTANDA)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-13",
+   "title": "【東京】NEO JAPONISM主催フェス「NEO KASSEN2025」",
+   "venue": "club asia",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-14",
+   "title": "【東京】IDOL ∞ INFINITY HOLIDAY SP",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-14",
+   "title": "【配信】「沖縄の思い出」ネットサイン会3",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-16",
+   "title": "【福岡】MAGICAL SPEC 単独ライブ",
+   "venue": "INZA",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-17",
+   "title": "【福岡】MAGICAL TIME SP",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-17",
+   "title": "【福岡】MAGICAL TIME SP AFTER PARTY",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-21",
+   "title": "【配信】「まじすぺ浴衣」ネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-23",
+   "title": "【東京】マジスペ大特典会",
+   "venue": "貸し会議室ヒカリエカンファレンス",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-24",
+   "title": "【東京】アイドル甲子園 in KANDA SQUARE HALL",
+   "venue": "KANDA SQUARE HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-25",
+   "title": "【東京】LEADING",
+   "venue": "duo MUSIC EXCHANGE",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-26",
+   "title": "【東京】Appare! Presents エンドレスサマー2025",
+   "venue": "duo MUSIC EXCHANGE",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-28",
+   "title": "【東京】うるトラすフェスタ vol.36",
+   "venue": "SHIBUYA CLUB QUATTRO",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-30",
+   "title": "【横浜】@JAM EXPO 2025 supported by UP-T",
+   "venue": "横浜アリーナ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-08-31",
+   "title": "【横浜】@JAM EXPO 2025 supported by UP-T「アイドル大運動会」",
+   "venue": "岩崎学園横浜デジタルアーツ専門学校 体育館",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-01",
+   "title": "【東京】ネコプラpixx.主催公演〜「にゃんフェス」!",
+   "venue": "Spotify O-WEST",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-05",
+   "title": "【福岡】HelloYouth × MAGICAL SPEC 2MAN LIVE「平日も天神でアイドルがみたい!」vol.8",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-07",
+   "title": "【東京】FREE LIVE SUNDAY DAY DREAMER",
+   "venue": "代官山UNIT",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-07",
+   "title": "【東京】アイドル学園フェス -2025 Autumn-",
+   "venue": "KANDA SQUARE HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-08",
+   "title": "【東京】僕らの秋が始まるよ",
+   "venue": "Zepp Shinjuku",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-09",
+   "title": "【東京】衛星とカラテアPresents「超 明星現象 2025」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-12",
+   "title": "【東京】selfish 定期公演 vol.5 「 Blue Moment 」",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-13",
+   "title": "【千葉】SPARK 2025 in MAKUHARI",
+   "venue": "幕張メッセ 国際展示場 9-11ホール",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-14",
+   "title": "【東京】LEADING NIGHT",
+   "venue": "SHINJUKU WALLY",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-14",
+   "title": "【東京】トキヲイキル8周年記念ライブ「∞(無限大)in TOKYO」",
+   "venue": "大塚Hearts Next",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-15",
+   "title": "【千葉】SPARK 2025 in MAKUHARI",
+   "venue": "幕張メッセ 国際展示場 展示ホール9~11",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-20",
+   "title": "【東京】NAKAYOSHI FES.2025",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-20",
+   "title": "【東京】アイドル甲子園 in KANDA SQUARE HALL -DAY1-",
+   "venue": "KANDA SQUARE HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-21",
+   "title": "【東京】アイドル甲子園 in KANDA SQUARE HALL -DAY2-",
+   "venue": "KANDA SQUARE HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-22",
+   "title": "【東京】 YOEI FES",
+   "venue": "WOMB",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-23",
+   "title": "【東京】KAWAII PARTY",
+   "venue": "シティホール&ギャラリー 五反田 (CITY HALL & GALLERY GOTANDA)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-26",
+   "title": "【福岡】MAGICAL TIME vol.7",
+   "venue": "ハイブリッジ劇場",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-27",
+   "title": "【福岡・単独】マジスペ感謝祭〜この夏の感謝を込めて〜",
+   "venue": "Live House DRUM SON ドラムサン",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-28",
+   "title": "【福岡・イベ】BBQオフ会",
+   "venue": "福岡・百道浜周辺(参加者のみ会場案内)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-09-29",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.15",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-01",
+   "title": "【ネットサイン会】「まじすぺ浴衣」ネットサイン会 FINAL",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-02",
+   "title": "【東京】HEROINES FES~渋谷サーキット~",
+   "venue": "Spotify O-EAST",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-04",
+   "title": "【東京】HYPE IDOL!",
+   "venue": "WWW X",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-04",
+   "title": "【東京】OLNew LAST主催公演『THE FINAL』",
+   "venue": "白金高輪SELENE STUDIO SELENE b2 セレネ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-05",
+   "title": "【東京】さとモンFES 2025 「おいでよ愉快ななかまたち」",
+   "venue": "Spotify O-EAST",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-06",
+   "title": "【東京】うるトラすフェスタ vol.38",
+   "venue": "渋谷 CLUB QUATTRO",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-10",
+   "title": "【台湾】Perfume Presents『IDOL KINGDOM TAIPEI - HORIZON STAGE』",
+   "venue": "Breeze MEGA Studio",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-11",
+   "title": "【台湾】IDOL KINGDOM TAIPEI",
+   "venue": "統一時代百貨 夢広場",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-11",
+   "title": "【台湾】Perfume Presents『IDOL KINGDOM TAIPEI - HORIZON STAGE SURPRISE!』",
+   "venue": "MOONDOG",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-12",
+   "title": "【台湾】MAGICAL SPEC台湾オフ会",
+   "venue": "台北某所",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-12",
+   "title": "台湾緊急SORRY.IDOL(すみません。)主催ライブ",
+   "venue": "杰克音樂 Jack's studio",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-17",
+   "title": "【福岡】HelloYouth × MAGICAL SPEC 2MAN LIVE「平日も天神でアイドルがみたい!」vol.9",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-18",
+   "title": "【配信】「ハロウィン」ネットサイン会1",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-19",
+   "title": "【福岡】FULIT BOX 東名阪福ツアー 福岡公演 MIX BOX vol.10 福岡編",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-20",
+   "title": "@ JAM応援宣言!「@ JAM THE WORLD」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-21",
+   "title": "【東京】AOAO主催サーキットフェス\"ブルーセッション EX\"",
+   "venue": "WWW X / Veats Shibuya / WWW / 渋谷音楽堂 / Star lounge / CHELSEA HOTEL / THE GAME / VIDENT / TAKEOFF7",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-22",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.16",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-24",
+   "title": "【福岡】BUZZDOL LIVE",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-25",
+   "title": "【山口】RISING HALL 10th Anniversary CHOSHU CALLING",
+   "venue": "RISING HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-26",
+   "title": "【福岡・単独】マジスペ Halloween Party 2025",
+   "venue": "Live House DRUM SON",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-30",
+   "title": "【ネットサイン会】「ハロウィン」ネットサイン会2",
+   "start": "19:00",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-10-31",
+   "title": "【福岡】MAGICAL TIME vol.9 HELLOWEEN SP",
+   "venue": "graf",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-01",
+   "title": "【福岡】Righteous IDOL! -New Keen Artists-",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-01",
+   "title": "【福岡】RINKA生誕祭 「RINKA 20th お祝いぱーてぃー2025〜もうおとなだもん!〜」",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-02",
+   "title": "【福岡】MIMI卒業公演「キラキララストページ」",
+   "venue": "Live House DRUM SON ドラムサン",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-03",
+   "title": "【東京】秋葉原アイドルサーキット vol.5",
+   "venue": "神田明神ホール/P.A.R.M.S秋葉原店/TwinBox AKIHABARA ほか",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-09",
+   "title": "【福岡】JINKS presents「Wonderland」",
+   "venue": "福岡INSA",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-09",
+   "title": "【配信】MAGICAL SPECワンマンライブ 「愛と魔法のかーにばる」 チケットネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-14",
+   "title": "【福岡】MAGICAL TIME vol.10",
+   "venue": "ハイブリッジ劇場",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-15",
+   "title": "【ネットサイン会】MAGICAL SPECワンマンライブ 「愛と魔法のかーにばる」 チケットネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-15",
+   "title": "【ネットサイン会】RINKA 二十歳記念ネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-16",
+   "title": "【岡山】新鬼街 - NEO ONI CITY- in OKAYAMA",
+   "venue": "CRAZY MAMA KINGDOM",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-19",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.17",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-22",
+   "title": "【福岡】MAGICAL SPECワンマンライブ 「愛と魔法のかーにばる」",
+   "venue": "福岡DRUM Be-1",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-23",
+   "title": "【福岡】「MAGICAL SESSION SP〜DAY1〜」",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-23",
+   "title": "【福岡】MAGICAL MAGICAL MAGICAL in BEAT STATION",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-24",
+   "title": "【福岡】「MAGICAL SESSION SP〜DAY2〜」",
+   "venue": "明治安田ホール福岡",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-24",
+   "title": "【福岡】MAGICAL MAGICAL MAGICAL in 明治安田ホール福岡",
+   "venue": "明治安田ホール福岡",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-25",
+   "title": "【福岡】MAGICAL SESSION AFTER PARTY",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-29",
+   "title": "【福岡】BTBR 8TH ANNIVERSARY LIVE",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-11-30",
+   "title": "【福岡】IQプロジェクトLIVE",
+   "venue": "福岡トヨタホール スカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-06",
+   "title": "【鹿児島】MAGICAL SESSION in KAGOSHIMA",
+   "venue": "鹿児島Speed King",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-06",
+   "title": "【鹿児島】まじすぺKAGOSHIMA初上陸!スッゲー!!",
+   "venue": "鹿児島Speed King",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-07",
+   "title": "【福岡】ちかっぱ祭2025",
+   "venue": "マリンメッセ福岡 B館",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-07",
+   "title": "【福岡】新鬼街 - NEO ONI CITY- in FUKUOKA",
+   "venue": "LIVEHOUSE evoL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-12",
+   "title": "【福岡】HelloYouth × MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.10",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-13",
+   "title": "【福岡】ANNA生誕祭 「☆あんなせいたんさい 2025☆」",
+   "venue": "Live House DRUM SON ドラムサン",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-14",
+   "title": "【ネットサイン会】MAGICAL SPECネットサイン会 SP",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-15",
+   "title": "「MAGICAL SESSION WINTER SP」",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-17",
+   "title": "【東京】MAGISPE RE:BOOST",
+   "venue": "SHINJUKU WALLY",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-19",
+   "title": "【大阪】プラ祭Osaka〜クリスマスSP DAY1〜",
+   "venue": "Banana Hall",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-20",
+   "title": "【大阪】プラ祭Osaka〜クリスマスSP DAY2〜",
+   "venue": "心斎橋SUNHALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-21",
+   "title": "【大阪】HelloYouth × MAGICAL SPEC 2MAN LIVE",
+   "venue": "LiveHouseANIMA",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-24",
+   "title": "【福岡】MAGICAL TIME vol.11 Xmas Circuit SP",
+   "venue": "The Voodoo Lounge / graf",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-27",
+   "title": "【福岡】まじすぺのきらきらホーリーナイト",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-28",
+   "title": "【福岡】IQプロジェクト年末大感謝祭2025 前日祭",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-29",
+   "title": "【福岡】IQプロジェクト年末大感謝祭2025-DAY1-「紅白ライブ合戦!!」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-30",
+   "title": "【福岡】IQプロジェクト年末大感謝祭2025-DAY2-「Special LIVE&チャリティオークション」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-31",
+   "title": "【福岡】HelloYouth MAGICAL SPEC大晦日~2025年ありがとうSP~",
+   "venue": "Live House DRUM SON ドラムサン",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2025-12-31",
+   "title": "【福岡】Kyushu Girls Wing ~2025LASTGIG",
+   "venue": "BEATSTATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-03",
+   "title": "【福岡】「IQプロジェクト新春LIVE 2026」 inららぽーと福岡",
+   "venue": "三井ショッピングパーク ららぽーと福岡1階 オーバルパーク",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-04",
+   "title": "「IQプロジェクト 新春LIVE 2026」 in スカラエスパシオ",
+   "venue": "福岡トヨタホール スカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-07",
+   "title": "【福岡】LUNARIUM to",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-10",
+   "title": "【東京】HelloYouth × MAGICAL SPEC 2MANライブ 「HELLO,MAGICAL — FUKUOKA to SHIBUYA」",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-10",
+   "title": "【東京】TOKYO GIRLS GIRLS extra!!",
+   "venue": "品川グランドホール",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-11",
+   "title": "【東京】LEADING 2026!!",
+   "venue": "品川インターシティホール&貸会議室",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-12",
+   "title": "【東京】IDOLEAD",
+   "venue": "川崎CLUB CITTA",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-13",
+   "title": "【ネットサイン会】ANNAお誕生日記念ネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-15",
+   "title": "【福岡】HelloYouth prime",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-17",
+   "end": "2026-01-18",
+   "title": "【台湾】3D LIVE Revolution × 2D LIVE Revolution",
+   "venue": "台北市萬華區昆明街76號B1",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-17",
+   "title": "【台湾】HelloYouth MAGICAL SPEC himawari(船橋) 台湾合同オフ会〜ランチTIME〜",
+   "venue": "台北近郊",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-21",
+   "title": "【東京】「AYA BIRTHDAY LIVE 2026」",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-21",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.19「MAGICAL SPEC無銭ライブ」",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-24",
+   "end": "2026-01-25",
+   "title": "【ネットサイン会】MAGICAL SPEC5周年記念ライブ 「まじすぺごしゅーねん〜ワクワク〜」 チケットネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-24",
+   "title": "【福岡】mini TIF in Kyushu",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-25",
+   "title": "【福岡】VS LIVE",
+   "venue": "福岡Pocket",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-27",
+   "title": "【東京】UTAGE FES Vol.4",
+   "venue": "歌舞伎町タワーステージ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-28",
+   "title": "【東京】5周年記念ライブ 「まじすぺごしゅーねん〜ワクワク〜」チケット手売り会",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-29",
+   "title": "【福岡】MAGICAL TIME vol.12",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-30",
+   "title": "【ネットサイン会】AYAお誕生日記念ネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-01-31",
+   "title": "【山口】CHOSHU CALLING",
+   "venue": "RISING HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-01",
+   "title": "【福岡】「AYA BIRTHDAY LIVE 2026」",
+   "venue": "INSA(インザ)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-01",
+   "title": "【福岡】MAGICAL SPEC無銭ライブ&5周年記念ライブ手売り会",
+   "venue": "INSA",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-07",
+   "title": "【ネットサイン会】MAGICAL SPEC5周年記念ライブ 「まじすぺごしゅーねん〜ワクワク〜」 チケットネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-07",
+   "title": "【福岡】MAGICAL SPEC5周年記念直前単独ライブ 「きっと、忘れられない日になる。〜この続きは、5周年の夜へ 〜」",
+   "venue": "LIVE HOUSE DRUM SON",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-08",
+   "title": "【福岡】miniちかっぱ祭ver.27.0 on the circuit",
+   "venue": "ハイブリッジ劇場",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-11",
+   "title": "【福岡】MAGICAL TIME vol.13",
+   "venue": "福岡Pocket",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-11",
+   "title": "【福岡】MAGICAL TIME vol.14",
+   "venue": "福岡Pocket",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-14",
+   "title": "【東京】5周年記念ライブ 「まじすぺごしゅーねん〜ワクワク〜」チケット手売り会",
+   "venue": "スペースISIN",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-14",
+   "title": "【東京】IDOLEAD VALENTINE 4MAN",
+   "venue": "Studio Freedom",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-15",
+   "title": "【東京】MAGICAL SESSION 5th Anniversary SP",
+   "venue": "Spotify O-WEST",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-15",
+   "title": "【東京】MAGICAL SPEC5周年記念ライブ 「まじすぺごしゅーねん〜ワクワク〜」",
+   "venue": "Spotify O-WEST",
+   "kind": "event",
+   "source": "timetree",
+   "etype": "oneman"
+  },
+  {
+   "date": "2026-02-19",
+   "title": "【ネットサイン会】MAGICAL SPEC5周年記念ライブ 「まじすぺごしゅーねん〜ワクワク〜」福岡公演 チケットネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-21",
+   "title": "【福岡】MAGICAL SPEC5周年記念ライブ 「まじすぺごしゅーねん〜ワクワク〜」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree",
+   "etype": "oneman"
+  },
+  {
+   "date": "2026-02-22",
+   "title": "【福岡】5周年ワクワク打ち上げ",
+   "venue": "天神周辺",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-23",
+   "title": "【福岡】IQプロジェクトライブ~MAGICAL SPEC5周年記念SPECIAL~",
+   "venue": "福岡トヨタホール スカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-27",
+   "title": "【東京】HEROINES FES 2026",
+   "venue": "LaLa arena TOKYO-BAY",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-28",
+   "title": "【東京】MAGICAL SPEC 単独ライブ 「5周年記念ライブワクワク大感謝祭」",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-02-28",
+   "title": "【東京】アンスぱーくサーキット",
+   "venue": "Spotify O-WEST",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-01",
+   "title": "【東京】LEADING SPRING",
+   "venue": "品川インターシティホール",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-02",
+   "title": "【東京】HYPE IDOL!ワンコインSP",
+   "venue": "THE GATE HOTEL 東京 by HULIC",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-03",
+   "title": "【東京】Appare! ひなまつり",
+   "venue": "有楽町ヒューリックホール",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-06",
+   "title": "【東京】IDORISE!! FESTIVAL 2026 前夜祭",
+   "venue": "Spotify O-EAST",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-07",
+   "end": "2026-03-08",
+   "title": "【東京】IDORISE!! FESTIVAL 2026",
+   "venue": "Spotify O-EAST",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-09",
+   "title": "【東京】「IQプロジェクト無銭LIVE 」&IQPなりの 「IDORISE!! FESTIVAL 2026 後夜祭」",
+   "venue": "Spotify O-Crest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-11",
+   "title": "【福岡】HelloYouth prime 9th",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-14",
+   "title": "【東京】ゴールド会員オフ会",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-15",
+   "title": "【東京】TOKYO GIRLS GIRLS extra!!",
+   "venue": "GARDEN新木場FACTORY",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-17",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.20",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-19",
+   "title": "【ネットチェキ会】MAGICAL SPEC 私服deチェキ会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-19",
+   "title": "【東京】パラディークpresents「PARAD-i-SE Vol.3」",
+   "venue": "有楽町ヒューリックホール",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-20",
+   "title": "【福岡】Mash Up",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-21",
+   "title": "【福岡】KYUSHU IDOL GIG in イオンモール大牟田",
+   "venue": "イオンモール大牟田",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-21",
+   "title": "【福岡】Road to GW!",
+   "venue": "LIVE HOUSE DRUM Be-1",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-22",
+   "title": "【福岡】MAGICAL SPEC 単独ライブ 「5周年記念ライブワクワク大感謝祭」",
+   "venue": "LIVE HOUSE DRUM SON",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-26",
+   "title": "【福岡】MAGICAL TIME vol.15",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-28",
+   "title": "【千葉】NATSUZOME2026",
+   "venue": "稲毛海浜公園野外音楽堂",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-29",
+   "title": "【大阪】mini ちかっぱ祭 ver.28.0 inOSAKA",
+   "venue": "クリエイティブセンター大阪(C.C.O)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-29",
+   "title": "【大阪】こぐまカリー「BEAR CUB CLUB」",
+   "venue": "梅田BANGBOO",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-03-30",
+   "title": "【大阪】mini ちかっぱ祭 ver.28.0 inOSAKA 後夜祭",
+   "venue": "Live House ANIMA",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-04",
+   "title": "【東京】HYPE IDOL!",
+   "venue": "品川インターシティホール",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-05",
+   "title": "【東京】ッスッゴイライブ-春-",
+   "venue": "品川グランドホール",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-10",
+   "title": "【配信】Top Yell NEO 2026 SPRING オンラインサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-11",
+   "title": "【東京】マジスペ大特典会「きみとマジスペの春日和」",
+   "venue": "ふれあい貸し会議室",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-12",
+   "title": "【東京】「LEADING」",
+   "venue": "品川インターシティホール&貸会議室",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-13",
+   "title": "【東京】Sweet Alley presents 「SWEET CIRCUIT 2026」",
+   "venue": "ビーツ・シブヤ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-15",
+   "title": "【東京】selfish主催「Blue Color Palette ROAD TO WEST 直前SP!」",
+   "venue": "clubasia",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-16",
+   "title": "【福岡】HelloYouth × MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.11",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-18",
+   "title": "【福岡】パピ♡ライブ vol.140 パピマシェ13th Anniversary",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-19",
+   "title": "「mini ちかっぱ祭 ver.30.0inFUKUOKA」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-19",
+   "title": "「SUPERHARD C」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-19",
+   "title": "【福岡】ゴールド会員オフ会",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-21",
+   "title": "【東京】Spotify O-nest 定期公演 vol.21",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-24",
+   "title": "マジスペ学園ネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-25",
+   "title": "[福岡] 「BUTABA-LIVE」",
+   "venue": "福岡ポケット",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-28",
+   "title": "「IDOL by...! EXTRA 2MAN SHOW」",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-29",
+   "title": "【福岡】「令和8年度マジスペ学園入学式」福岡公演",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-04-30",
+   "title": "【福岡】MAGICAL TIME",
+   "venue": "福岡Pocket",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-01",
+   "title": "【福岡】HelloYouth × MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.12",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-02",
+   "title": "【福岡】博多どんたくまでもう待てない!今日から祭りだ!! 「LinQ野外祭り2026」",
+   "venue": "ベイサイドプレイス博多",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-03",
+   "title": "【福岡】「博多どんたくアイドル祭2026」",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-03",
+   "title": "【福岡】「第65回 2026年 博多どんたく港まつり港本舞台」",
+   "venue": "ベイサイドプレイス博多",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-04",
+   "title": "「博多どんたくアイドルパレード」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-04",
+   "title": "【福岡】「博多どんたくアイドル祭2026~5月4日The Voodoo Lounge~」",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-04",
+   "title": "【福岡】「博多どんたくアイドル祭2026~5月4日スカラエスパシオ~」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-05",
+   "title": "【福岡】博多どんたくアイドル祭2026~5月5日BEATSTATION3部~",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-05",
+   "title": "【福岡】博多どんたくアイドル祭2026~5月5日The Voodoo Lounge~",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-06",
+   "title": "【福岡】「WEEKEND BTBR」",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-06",
+   "title": "【福岡】博多どんたくアイドル祭2026~5月6日BEATSTATION1部~",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-08",
+   "title": "【大阪】「IQプロジェクトライブin大阪」",
+   "venue": "Live House Anima",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-09",
+   "title": "【大阪】MAWA LOOP OSAKA 2026",
+   "venue": "FANJ twice",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-10",
+   "title": "【大阪】合同大特典会in大阪",
+   "venue": "なんばカルチャービル",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-11",
+   "title": "【大阪】「Four Moments」",
+   "venue": "Live House Anima",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-16",
+   "title": "【神奈川】FES☆TIVE Presents「波響祭」",
+   "venue": "うみかぜ公園",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-17",
+   "title": "[東京]「TOKYO GIRLS GIRLS extra!!」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-17",
+   "title": "【東京】MAGICAL SPEC all SONGS LIVE 「マジスペ 100%」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-18",
+   "title": "「マジスペ学園全員サイン会」",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-20",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.22",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-23",
+   "end": "2026-05-24",
+   "title": "【山口】CHOSHU CALLING -26 MAY-",
+   "venue": "RISING HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-23",
+   "title": "【山口】feelNEO山口深夜公演!!",
+   "venue": "RISING HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-28",
+   "title": "【福岡】「SUPER HARD C」",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-29",
+   "title": "【福岡】MAGICAL TIME vol.17",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-30",
+   "title": "【福岡】「IDOL by...! EXTRA 2MAN SHOW」",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-30",
+   "title": "【福岡】IDOL by...! NIGHT",
+   "venue": "evoL by GRANDMIRAGE",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-31",
+   "title": "【福岡】「IDOL by...!」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-05-31",
+   "title": "【福岡】大庭彩歌生誕祭「大庭彩歌の歴史」",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree",
+   "etype": "taiban"
+  },
+  {
+   "date": "2026-06-03",
+   "title": "「KOTONE誕生日当日ネットサイン会」",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-06",
+   "title": "【福岡】KOTONE生誕祭「KOTONE Birthday Party 2026♡」",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-07",
+   "title": "【山口】「新鬼街-NEO ONI CITY- in YAMAGUCHI」",
+   "venue": "RISING HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-11",
+   "title": "【福岡】HelloYouth × MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.13",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-12",
+   "title": "【福岡】さとりモンスター 全国下北化計画ツアー 2026",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-13",
+   "title": "TIF学園「学園祭 2026 春」",
+   "venue": "ベルエポック美容専門学校 第2校舎",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-14",
+   "title": "【東京】「IDOL STORM」",
+   "venue": "WOMB",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-16",
+   "title": "【東京】「TOKYO GIRLS GIRLS」",
+   "venue": "Zepp Shinjuku (TOKYO)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-17",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.23",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-18",
+   "title": "【ANNA】舞台「ドリルマンØ(バース)」",
+   "venue": "コフレリオ新宿シアター",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-19",
+   "title": "【ネットチェキ会】「私服deネットチェキ会」",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-20",
+   "end": "2026-06-21",
+   "title": "【大阪】「∞Beats」",
+   "venue": "名村造船所跡地",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-22",
+   "title": "【大阪】MAGICAL SPEC all SONGS LIVE 「マジスペ 100% in 大阪」",
+   "venue": "Live House Anima",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-23",
+   "title": "【福岡】「MAGICAL TIME vol.18」",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-24",
+   "title": "【東京】パラディークpresents 「PARAD-i-SE Vol.5 〜2周年ワンマン前SP!〜」",
+   "venue": "ビーツ・シブヤ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-26",
+   "title": "【沖縄】アイドルチャンプルvol.2〜DAY1〜",
+   "venue": "Okinawa Output",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-27",
+   "title": "【沖縄】MAGICAL SPEC × himawari(船橋) 合同オフ会",
+   "venue": "国際通り某所",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-27",
+   "title": "【沖縄】アイドルチャンプルvol.2〜DAY2〜",
+   "venue": "Okinawa Output",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-28",
+   "title": "【沖縄】アイドルチャンプルvol.2〜DAY3〜",
+   "venue": "Okinawa Output",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-06-28",
+   "title": "めんそーれ!マジスペBBQオフ会",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-03",
+   "title": "【東京】「LEADING BLAZE」",
+   "venue": "BLAZE Gotanda",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-04",
+   "title": "【東京】「BLAZE STADIUM」",
+   "venue": "BLAZE Gotanda",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-04",
+   "title": "【東京】「KAWAII PARTY」",
+   "venue": "品川インターシティホール",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-05",
+   "title": "【千葉】超NATSUZOME 2026",
+   "venue": "幕張海浜公園Gブロック芝生広場",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-09",
+   "title": "【福岡】HelloYouth×MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.14",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-10",
+   "title": "【福岡】「LEADING FUKUOKA 前夜祭」",
+   "venue": "graf",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-11",
+   "title": "「LEADING FUKUOKA BARI BARI NIGHT」",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-11",
+   "title": "【福岡】バリ!リーディング フクオカ!!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-12",
+   "title": "【福岡】バリ!リーディング フクオカ!!",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-12",
+   "title": "【福岡】バリカタ! mini 3杯目",
+   "venue": "BEAT STATION",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-14",
+   "title": "【福岡】MAGICAL TIME vol.19",
+   "venue": "福岡ポケット",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-15",
+   "title": "【ネットサイン会】MAGICAL SPEC ネットサイン会 -OKINAWA DAY1-",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-19",
+   "title": "【福岡・KOTONE】岸田麻佑生誕祭「またひとつ、夏になる。」",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree",
+   "etype": "taiban"
+  },
+  {
+   "date": "2026-07-19",
+   "title": "【福岡】MAGICAL SPEC all SONGS LIVE 「マジスペ 100% in 福岡」",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-20",
+   "title": "【ネットサイン会】MAGICAL SPEC ネットサイン会 -OKINAWA DAY2-",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-21",
+   "title": "【東京】HelloYouth東京定期 vol.5「LIVE THE YOUTH」",
+   "venue": "SHIBUYA DESEO",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-22",
+   "title": "【東京】「UTAGE FES Vol.5」",
+   "venue": "KABUKICHO TOWER STAGE",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-25",
+   "title": "【福岡】TIF2026 プレミア企画「TIF2026 マジスペ決起集会」",
+   "venue": "Buddy up!",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-26",
+   "title": "【福岡】IQP SESSION",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-27",
+   "title": "【ネットサイン会】「マジスペ全員サイン会」",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-29",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.24",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-07-31",
+   "end": "2026-08-01",
+   "title": "TOKYO IDOL FESTIVAL 2026",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-02",
+   "title": "「YUYU誕生日当日ネットサイン会」",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-03",
+   "title": "【東京】MAGICAL SESSION 〜TIF2026 ありがとうスペシャル!〜",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-08",
+   "end": "2026-08-09",
+   "title": "IDOL SUMMER JUNGLE 2026",
+   "venue": "お台場R地区",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-10",
+   "title": "NEO JAPONISM主催フェス「NEO KASSEN2026」",
+   "venue": "KABUKICHO TOWER STAGE",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-11",
+   "title": "【東京】HYPE IDOL!Summer",
+   "venue": "KANDA SQUARE HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-12",
+   "title": "【東京】IDOL ∞ INFINITY HOLIDAY SP 2026 DAY4",
+   "venue": "白金高輪SELENE STUDIO SELENE b2 セレネ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-13",
+   "title": "【福岡】HelloYouth×MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.15",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-14",
+   "title": "【東京】「SHOW TIME」",
+   "venue": "ヒューリックホール東京",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-15",
+   "title": "【東京】「IDOL STORM」",
+   "venue": "APEXIA(アペクシア)ーイベントスペースー",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-16",
+   "title": "【東京】UtaGe!×FES☆TIVE 主催サーキット「超宴祭!」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-17",
+   "title": "【ネットサイン会】「マジスペ夏の思い出ネットサイン会」",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-18",
+   "title": "【東京】Malcolm Mask McLaren pre.「Malcolm Summer Session」Day 2",
+   "venue": "Spotify O-Crest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-19",
+   "title": "【東京】「ゆゆちゃん、はじめてのおたんじょうびかい〜ヨーソロー〜」 東京公演",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-19",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.25",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-22",
+   "title": "【福岡・KOTONE】トキヲイキル 9th Anniversary Live 「序章、第十幕へ」",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-22",
+   "title": "【福岡】「ゆゆちゃん、はじめてのおたんじょうびかい〜ヨーソロー〜」福岡公演",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-23",
+   "title": "【福岡・KOTONE】トキイキBBQオフ会",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-23",
+   "title": "【福岡】テレビ西日本presents「福音 -FUKUON-」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-25",
+   "title": "【東京】「Appare! Presents エンドレスサマー2026」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-28",
+   "title": "【北海道】A Villa 2026 前夜祭",
+   "venue": "cube garden",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-29",
+   "title": "【北海道】「URA A Villa DAY.1」",
+   "venue": "SYNC north",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-29",
+   "title": "【北海道】MAGICAL SPEC北海道オフ会",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-30",
+   "title": "A Villa idol festival HOKKAIDO 2026",
+   "venue": "安平町ときわ公園",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-08-31",
+   "title": "【福岡】「MAGICAL TIME vol.20」",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-03",
+   "title": "【大阪】IDOL GATE in ESAKA MUSE",
+   "venue": "ESAKA MUSE",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-04",
+   "title": "【大阪】すべての瞬間は君だった。pre「瞬間diary」",
+   "venue": "OSAKA MUSE",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-05",
+   "title": "【大阪】ナナフェス2026 supported by「SUNTORY オールフリー」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-06",
+   "title": "【大阪】MAGICAL SPEC大阪オフ会",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-07",
+   "title": "【大阪】「MAGICAL SESSION in 大阪」",
+   "venue": "Live House Anima",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-09",
+   "title": "【福岡】MAGICAL TIME vol.21",
+   "venue": "graf",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-10",
+   "title": "【福岡】HelloYouth×MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.16",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-12",
+   "title": "【福岡】オフ会(スタンプラリー特典)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-13",
+   "title": "【福岡】「マジスペ納涼祭」",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-15",
+   "title": "【ネットサイン会】マジスペ夏の思い出ネットチェキサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-16",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.26",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-19",
+   "title": "【東京】「IDOL STORM」",
+   "venue": "下北沢シャングリラ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-20",
+   "title": "【東京】ッスッゴイライブ",
+   "venue": "品川インターシティホール&貸会議室",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-21",
+   "title": "【山梨】SPARK 2026 in YAMANAKAKO",
+   "venue": "山中湖交流プラザ きらら",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-22",
+   "title": "マジスペオフ会 in 山梨",
+   "venue": "山梨県甲府市周辺",
+   "start": "13:45",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-23",
+   "title": "【山梨】SPARK 2026 in YAMANAKAKO",
+   "venue": "山中湖交流プラザ きらら",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-26",
+   "title": "【山口】IGINITION",
+   "venue": "RISING HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-27",
+   "title": "【山口】LIVE IN MALL CARNIVAL",
+   "venue": "イオンタウン周南 セントラルコート",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-09-28",
+   "title": "【福岡】.LiNIXLiNE. presents「COLORLiNIX vol.VII 」",
+   "venue": "福岡ポケット",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-01",
+   "title": "【ネットサイン会】マジスペ浴衣衣装ネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-03",
+   "end": "2026-10-04",
+   "title": "【金沢】かがやきフェス2026",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-07",
+   "title": "【東京】衛星とカラテアPresents 「超 明星現象 2026」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-10",
+   "title": "【福岡】マジスペ大運動会",
+   "venue": "スプラージ金隈",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-11",
+   "title": "【福岡】マジスペ歌の収穫祭",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-12",
+   "title": "【東京】「さとモンFES 2026 おいでよ愉快ななかまたち 今年は2会場だよ!」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-14",
+   "title": "【東京】さとりモンスター✖︎ MAGICAL SPEC 2マン 「マジカルモンスター」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-17",
+   "title": "【東京】秋の可憐なアイドルフェス2026 DAY1",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-18",
+   "title": "【東京】MAGICAL SPEC大特典会",
+   "venue": "五反田貸し会議室ANNEX",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-19",
+   "title": "【大阪】MAGICAL SPECワンコインライブ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-21",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.27",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-22",
+   "title": "【福岡】HelloYouth × MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.17",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-23",
+   "title": "【福岡】MAGICAL TIME vol.22",
+   "venue": "RE:XiON HALL",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-24",
+   "title": "【ネットサイン会】ハロウィンネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-25",
+   "title": "【福岡】「SPECTACLE HALLOWEEN」",
+   "venue": "福岡トヨタホールスカラエスパシオ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-30",
+   "title": "【福岡】「SUPERHARD C」",
+   "venue": "福岡ポケット",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-31",
+   "title": "【ネットサイン会】RINKA誕生日カウントダウンネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-10-31",
+   "end": "2026-11-01",
+   "title": "【埼玉】IDOL HALLOWEEN JAPAN 2026 Supported by Malymoon",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-02",
+   "title": "【福岡】MAGICAL TIME vol.23",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-03",
+   "title": "【福岡】BTBR 9TH ANNIVERSARY CIRCUIT",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-03",
+   "title": "【福岡】RINKA生誕祭「Twenty-Wan🐾」福岡公演",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "【ネットサイン会】MAGICAL SPEC ワンマンライブ チケットネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "【福岡】Smells Like Curry Spirit 2026秋",
+   "venue": "舞鶴公園 三ノ丸広場",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "【佐賀】「MAGICAL HOME 〜YUYU凱旋〜」",
+   "venue": "LIVE HOUSE RAG.G(ラグ・ジー)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "【東京】MAGICAL SPEC Spotify O-nest 定期公演 vol.28",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "【東京】RINKA生誕祭「Twenty-Wan🐾」東京公演",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "【大阪】Weekday session 〜超天神祭2026直前SP〜",
+   "venue": "Live House Anima",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "【福岡】HelloYouth × MAGICAL SPEC 2MAN LIVE 「平日も天神でアイドルがみたい!」vol.18",
+   "venue": "The Voodoo Lounge",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "MAGICAL SPEC ワンマンライブ チケットネットサイン会",
+   "kind": "sign",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "【福岡】NUANCE 2026 TOUR「hike」福岡公演",
+   "venue": "ライブハウスCB",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "【福岡】ワンマンも超天神祭も!まじすぺ決起集会",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "【福岡】MAGICAL SPEC ワンマンライブ",
+   "venue": "LIVE HOUSE DRUM Be-1",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-22",
+   "end": "2026-11-23",
+   "title": "【福岡】 MAGICAL SPEC presents 「 超天神祭2026」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "【福岡】MAGICAL SPEC presents 超天神祭2026「超後夜祭」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "【名古屋】「AREA052」",
+   "venue": "Lion Theater",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-28",
+   "end": "2026-11-29",
+   "title": "ART SOUND presents 「SOUND GARDEN 2026〜ART SOUND15th Anniversary〜」",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-11-30",
+   "title": "【大阪】HelloYouth × MAGICAL SPEC 2MAN LIVE「平日も大阪でアイドルがみたい!」",
+   "venue": "Live House Anima",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-05",
+   "end": "2026-12-06",
+   "title": "【東京】SPARK 2026 -秋葉原冬祭-",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-05",
+   "title": "【東京】VERSUS",
+   "venue": "渋谷チェルシーホテル",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-07",
+   "title": "【大阪】ライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-08",
+   "title": "【福岡】iLiVE! TOUR FUKUOKA",
+   "venue": "Zepp Fukuoka",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-10",
+   "title": "【東京】「ッスッゴイライブ-8th Anniversary SP-」",
+   "venue": "Shibuya LOVEZ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-12",
+   "title": "【福岡】ANNA生誕祭「Cutie Holic」",
+   "venue": "LIVE HOUSE DRUM SON (ドラムサン)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-13",
+   "title": "【鹿児島】ライブ(仮)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-14",
+   "title": "【福岡】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-15",
+   "title": "【福岡】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-16",
+   "title": "【東京】Spotify O-nest 定期公演",
+   "venue": "Spotify O-nest",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-19",
+   "title": "【東京】単独ライブ",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-19",
+   "title": "【東京】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-20",
+   "title": "【東京】対バンライブ(仮)",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-24",
+   "title": "【福岡】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-25",
+   "title": "【福岡】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-26",
+   "title": "【東京】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-27",
+   "title": "【東京】LEADING PREMIUM 年末感謝祭'26",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-28",
+   "title": "【福岡】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-29",
+   "title": "【福岡】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-30",
+   "title": "【福岡】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2026-12-31",
+   "title": "【福岡】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-02",
+   "title": "【東京】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-03",
+   "title": "【東京】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-04",
+   "title": "【東京】対バンライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-08",
+   "title": "【福岡】単独ライブ予定",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-16",
+   "title": "【福岡】SHIKI生誕祭",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-17",
+   "title": "【福岡】AIKA生誕祭",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-17",
+   "title": "【福岡】MEI生誕祭",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-30",
+   "title": "【東京】AYA生誕祭 東京公演",
+   "kind": "event",
+   "source": "timetree"
+  },
+  {
+   "date": "2027-01-31",
+   "title": "【福岡】AYA生誕祭 福岡公演",
+   "kind": "event",
+   "source": "timetree"
+  }
+ ],
+ "updated": "2026-11-16T10:39:43.990Z"
+}
