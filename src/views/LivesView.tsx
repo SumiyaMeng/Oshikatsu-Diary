@@ -3,8 +3,11 @@ import { daysBetween, fmtDate, today, yen } from '../lib/format';
 import { EVENT_TYPES, livesPerMonth, livesStats, nextMilestone } from '../lib/logic';
 import type { Entry } from '../lib/types';
 import { Columns, EntryCard, Empty, HBars, Tile, useColor, useData } from '../components/ui';
+import { CalendarPanel, type FeedState } from '../components/Calendars';
+import type { Feed } from '../lib/feeds';
+import type { Candidate } from '../lib/importers';
 
-export function LivesView({ onOpen, onNewEvent, onImport }: { onOpen: (e: Entry) => void; onNewEvent: () => void; onImport: () => void }) {
+export function LivesView({ onOpen, onNewEvent, onImport, feeds, onSort }: { onOpen: (e: Entry) => void; onNewEvent: () => void; onImport: () => void; feeds: FeedState; onSort: (f: Feed, list: Candidate[]) => void }) {
   const { items, showMoney } = useData();
   const color = useColor();
   const [group, setGroup] = useState('');
@@ -13,6 +16,8 @@ export function LivesView({ onOpen, onNewEvent, onImport }: { onOpen: (e: Entry)
   const s = useMemo(() => livesStats(items, t, groups.includes(group) ? group : ''), [items, t, group, groups]);
   if (!items.some((e) => e.kind === 'event'))
     return (
+      <>
+      <CalendarPanel state={feeds} kind="event" onSort={onSort} />
       <Empty
         title="No lives logged yet"
         actions={
@@ -26,8 +31,9 @@ export function LivesView({ onOpen, onNewEvent, onImport }: { onOpen: (e: Entry)
           </>
         }
       >
-        Every ワンマン, 対バン, リリイベ or fes becomes a page with its 入場番号, chekis, 特典会 memos and costs. Your stats build up here.
+        Every ワンマン, 対バン, 大特典会 or オフ会 becomes a page with its 入場番号, chekis, 特典会 memos and costs. Your stats build up here.
       </Empty>
+      </>
     );
   const next = nextMilestone(s.past.length);
   return (
@@ -44,6 +50,7 @@ export function LivesView({ onOpen, onNewEvent, onImport }: { onOpen: (e: Entry)
           ))}
         </div>
       ) : null}
+      <CalendarPanel state={feeds} kind="event" onSort={onSort} />
       <div className="addrow" style={{ marginTop: 6 }}>
         <button className="btn ghost sm" type="button" onClick={onImport}>
           Import lives from X, TimeTree or a calendar

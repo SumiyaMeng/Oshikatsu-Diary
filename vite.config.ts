@@ -27,9 +27,13 @@ export default defineConfig({
       workbox: {
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         navigateFallback: `${base}index.html`,
-        globIgnores: ['**/models/**'],
+        globIgnores: ['**/models/**', '**/feeds/**'],
         // Face models are large: cache them the first time face matching is used.
-        runtimeCaching: [{ urlPattern: /\/models\//, handler: 'CacheFirst', options: { cacheName: 'face-models' } }],
+        // Group calendars change: always try the network first, fall back to the last copy offline.
+        runtimeCaching: [
+          { urlPattern: /\/models\//, handler: 'CacheFirst', options: { cacheName: 'face-models' } },
+          { urlPattern: /\/feeds\/.*\.json$/, handler: 'NetworkFirst', options: { cacheName: 'group-calendars', networkTimeoutSeconds: 5 } },
+        ],
       },
     }),
   ],

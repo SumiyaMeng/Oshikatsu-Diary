@@ -1,5 +1,5 @@
 /** Kinds of entries in the log. */
-export type Kind = 'tkk' | 'event' | 'photo' | 'merch' | 'travel' | 'collab' | 'wallet';
+export type Kind = 'tkk' | 'event' | 'sign' | 'photo' | 'merch' | 'travel' | 'collab' | 'wallet';
 
 /** One logged item. Fields are shared across kinds; each kind uses a subset. */
 export interface Entry {
@@ -50,10 +50,14 @@ export interface Entry {
 
   /** Collab */
   cotype?: string;
+  /** Last day, YYYY-MM-DD: for collabs, and for lives that run over several days. */
   end?: string;
 
   /** Marche */
   media?: 'photo' | 'video';
+
+  /** ネットサイン会: true once the signed photo has arrived. */
+  arrived?: boolean;
 }
 
 /** A stored image or video. The blob is missing until downloaded on a new device. */
@@ -84,4 +88,6 @@ export interface Member {
 
 export interface Settings {
   hideMoney: boolean;
+  /** Ids of group calendars the user follows (see feeds.ts). */
+  feeds?: string[];
 }

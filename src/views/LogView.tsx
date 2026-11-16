@@ -4,7 +4,7 @@ import { KIND_LABEL, openWallets, sumAmt } from '../lib/logic';
 import type { Entry, Kind } from '../lib/types';
 import { EntryCard, Empty, useData } from '../components/ui';
 
-const FILTERS: ('all' | Kind)[] = ['all', 'tkk', 'event', 'photo', 'merch', 'wallet', 'travel', 'collab'];
+const FILTERS: ('all' | Kind)[] = ['all', 'tkk', 'event', 'sign', 'photo', 'merch', 'wallet', 'travel', 'collab'];
 
 export function LogView({ onOpen, onNew, onWallet }: { onOpen: (e: Entry) => void; onNew: (k: Kind) => void; onWallet: () => void }) {
   const { items, showMoney } = useData();

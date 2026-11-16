@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { usePhotoURL } from '../lib/hooks';
-import { fmtDate, yen, yenShort } from '../lib/format';
-import { CHEKI_TYPES, COLLAB_TYPES, EVENT_TYPES, KIND_LABEL, amt, chekisOf, eventCost, isLoop, linked } from '../lib/logic';
+import { fmtDate, fmtRange, yen, yenShort } from '../lib/format';
+import { CHEKI_TYPES, COLLAB_TYPES, KIND_LABEL, etypeLabel, daysOf, amt, chekisOf, eventCost, isLoop, linked } from '../lib/logic';
 import { onToast } from '../lib/toast';
 import type { Entry, Member, Settings } from '../lib/types';
 
@@ -81,7 +81,7 @@ export function titleOf(e: Entry): string {
   if (e.kind === 'tkk') return `${e.oshi || '特典会'} · ${e.n ?? 0} ${CHEKI_TYPES[e.chtype ?? 'cheki'] ?? 'チェキ'}`;
   if (e.kind === 'wallet') return `${e.label || 'チェキ券'} ×${e.qty ?? 0}`;
   if (e.title) return e.title;
-  if (e.kind === 'event') return EVENT_TYPES[e.etype ?? ''] ?? 'Live';
+  if (e.kind === 'event') return etypeLabel(e.etype);
   return KIND_LABEL[e.kind];
 }
 
@@ -91,11 +91,11 @@ export function EntryCard({ e, inEvent, full, onOpen }: { e: Entry; inEvent?: bo
   const ev = e.eventId ? byId[e.eventId] : undefined;
   let label: string = KIND_LABEL[e.kind];
   if (e.kind === 'tkk' && e.loop) label += ` · loop ${e.loop}`;
-  if (e.kind === 'event') label = EVENT_TYPES[e.etype ?? ''] ?? 'Live / event';
+  if (e.kind === 'event') label = etypeLabel(e.etype);
   if (e.kind === 'collab' && e.cotype) label += ' · ' + (COLLAB_TYPES[e.cotype] ?? '');
   if (e.kind === 'photo' && e.media === 'video') label = 'Marche · video';
   const meta = [
-    fmtDate(e.date),
+    e.kind === 'event' ? fmtRange(e.date, e.end) + (daysOf(e) > 1 ? ` · ${daysOf(e)} days` : '') : fmtDate(e.date),
     e.oshi && e.kind !== 'tkk' ? (
       <span key="o" className="who" style={color(e.oshi)}>
         {e.oshi}
@@ -103,7 +103,7 @@ export function EntryCard({ e, inEvent, full, onOpen }: { e: Entry; inEvent?: bo
     ) : null,
     e.venue || null,
     e.kind === 'event' && (e.open || e.start) ? [e.open && `OPEN ${e.open}`, e.start && `START ${e.start}`].filter(Boolean).join(' / ') : null,
-    ev && !inEvent ? 'at ' + (ev.title || EVENT_TYPES[ev.etype ?? ''] || 'event') : null,
+    ev && !inEvent ? 'at ' + (ev.title || etypeLabel(ev.etype)) : null,
     e.kind === 'collab' && e.end ? 'until ' + fmtDate(e.end) : null,
     e.kind === 'wallet' && e.expires ? 'use by ' + fmtDate(e.expires) : null,
   ].filter(Boolean);
@@ -145,7 +145,14 @@ export function EntryCard({ e, inEvent, full, onOpen }: { e: Entry; inEvent?: bo
           {showMoney && !inEvent && eventCost(e, items) ? <span className="pill num">{yen(eventCost(e, items))} in total</span> : null}
         </div>
       ) : null}
+      {e.kind === 'sign' ? (
+        <div className="pills">
+          {e.qty ? <span className="pill">{e.qty} photo{e.qty > 1 ? 's' : ''}</span> : null}
+          <span className={`pill${e.arrived ? ' ok' : ''}`}>{e.arrived ? 'Arrived' : 'Waiting for it to arrive'}</span>
+        </div>
+      ) : null}
       {e.kind === 'tkk' && e.talk ? <Bubbles text={e.talk} oshi={e.oshi} limit={full ? 0 : 5} /> : null}
+      {e.kind === 'sign' && e.talk ? <p className="note">✍️ {e.talk}</p> : null}
       {e.note ? <p className="note">{e.note}</p> : null}
       <Photos e={e} />
     </div>

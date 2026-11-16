@@ -1,5 +1,5 @@
-import { fmtDate, yen } from '../lib/format';
-import { EVENT_TYPES, KIND_LABEL, amt, chekisOf, eventCost, isLoop, linked } from '../lib/logic';
+import { fmtRange, yen } from '../lib/format';
+import { KIND_LABEL, etypeLabel, daysOf, amt, chekisOf, eventCost, isLoop, linked } from '../lib/logic';
 import type { Entry, Kind } from '../lib/types';
 import { EntryCard, HBars, Photos, Tile, useColor, useData } from '../components/ui';
 
@@ -23,10 +23,11 @@ export function EventView({ id, onBack, onOpen, onNew, onEdit }: { id: string; o
         ← Lives
       </button>
       <div className="evhead">
-        <span className="kind k-event">{EVENT_TYPES[ev.etype ?? ''] ?? 'Live / event'}</span>
-        <h2>{ev.title || EVENT_TYPES[ev.etype ?? ''] || 'Live'}</h2>
+        <span className="kind k-event">{etypeLabel(ev.etype)}</span>
+        <h2>{ev.title || etypeLabel(ev.etype)}</h2>
         <div className="meta">
-          {fmtDate(ev.date)}
+          {fmtRange(ev.date, ev.end)}
+          {daysOf(ev) > 1 ? ` · ${daysOf(ev)} days` : ''}
           {ev.oshi ? (
             <>
               {' · '}

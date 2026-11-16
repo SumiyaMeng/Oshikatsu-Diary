@@ -3,7 +3,7 @@ import { flushSync } from 'react-dom';
 import { deleteEntry, saveEntry, savePhoto } from '../lib/db';
 import { blobToImage, findFaces, matchFaces, type FaceMatch } from '../lib/face';
 import { fmtDate, today, yen } from '../lib/format';
-import { CHEKI_TYPES, COLLAB_TYPES, EVENT_TYPES, KIND_LABEL, PERKS, PICK_KINDS, cleanTalk, loopCost, nextLoop, nextSpeakerPrefix, openWallets } from '../lib/logic';
+import { CHEKI_TYPES, COLLAB_TYPES, EVENT_TYPES, KIND_LABEL, etypeLabel, PERKS, PICK_KINDS, cleanTalk, loopCost, nextLoop, nextSpeakerPrefix, openWallets } from '../lib/logic';
 import { parseEventText } from '../lib/importers';
 import { shrinkImage } from '../lib/scanner';
 import { toast } from '../lib/toast';
@@ -42,7 +42,8 @@ const ls = {
 
 const FIELDS: Record<Kind, (keyof Entry)[]> = {
   tkk: ['eventId', 'oshi', 'talk', 'n', 'unit', 'chtype', 'perk', 'free', 'amount', 'loop', 'note', 'walletId'],
-  event: ['etype', 'title', 'oshi', 'venue', 'number', 'amount', 'note', 'open', 'start'],
+  event: ['etype', 'title', 'oshi', 'venue', 'end', 'number', 'amount', 'note', 'open', 'start'],
+  sign: ['title', 'oshi', 'qty', 'unit', 'amount', 'talk', 'note', 'arrived'],
   photo: ['title', 'oshi', 'amount', 'note', 'media'],
   merch: ['title', 'oshi', 'amount', 'eventId', 'note'],
   travel: ['title', 'oshi', 'amount', 'eventId', 'note'],
@@ -63,7 +64,7 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
     let eventId = init.eventId ?? '';
     if (!eventId && ['tkk', 'merch', 'travel'].includes(kind)) eventId = items.find((x) => x.kind === 'event' && x.date === today())?.id ?? '';
     const lt = lastOf((x) => x.kind === 'tkk');
-    const v: FV = { kind, date: today(), eventId, pics: [], n: 1, etype: 'oneman', cotype: 'restaurant', chtype: lt?.chtype ?? 'cheki', media: 'photo', label: 'チェキ券' };
+    const v: FV = { kind, date: today(), eventId, pics: [], n: 1, etype: 'taiban', cotype: 'restaurant', chtype: lt?.chtype ?? 'cheki', media: 'photo', label: 'チェキ券' };
     if (kind === 'tkk') {
       v.oshi = lt?.oshi ?? '';
       v.talk = ls.get(TALK_DRAFT) || '推：';
@@ -121,7 +122,7 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
   const wallets = useMemo(() => openWallets(items, today()), [items]);
   const events = useMemo(() => items.filter((e) => e.kind === 'event').sort((a, b) => b.date.localeCompare(a.date)), [items]);
 
-  const autoCost = k === 'tkk' ? loopCost(fv) : k === 'wallet' ? (+(fv.qty ?? 0) || 0) * (+(fv.unit ?? 0) || 0) : 0;
+  const autoCost = k === 'tkk' ? loopCost(fv) : k === 'wallet' || k === 'sign' ? (+(fv.qty ?? 0) || 0) * (+(fv.unit ?? 0) || 0) : 0;
 
   /* ---- talk memo ---- */
   const talkKey = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -209,7 +210,9 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
       d.talk = cleanTalk(String(fv.talk ?? ''));
       d.loop = Math.max(1, d.loop ?? 1);
     }
-    if (k === 'wallet' && !fv.amountManual) d.amount = autoCost;
+    if ((k === 'wallet' || k === 'sign') && !fv.amountManual) d.amount = autoCost;
+    if (k === 'event' && d.end && d.end <= (d.date ?? '')) d.end = '';
+    if (k === 'sign') d.arrived = !!fv.arrived;
     d.photos = fv.pics.map((p) => p.id);
     d.scans = fv.pics.filter((p) => p.scan).map((p) => p.id);
     return d as Entry;
@@ -217,6 +220,7 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
   const save = async (next: boolean) => {
     const d = build();
     if (k === 'event' && !d.title && !d.venue) return toast('Add the event name or venue.');
+    if (k === 'event' && fv.end && fv.end < (d.date ?? '')) return toast('The last day is before the first day.');
     if (k === 'wallet' && !d.qty) return toast('How many tickets did you buy?');
     setSaving(true);
     try {
@@ -295,7 +299,7 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
         <option value="">Not linked to a live</option>
         {events.map((e) => (
           <option key={e.id} value={e.id}>
-            {fmtDate(e.date)} {e.title || EVENT_TYPES[e.etype ?? ''] || 'Live'}
+            {fmtDate(e.date)} {e.title || etypeLabel(e.etype)}
           </option>
         ))}
       </select>
@@ -504,10 +508,13 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
         </div>
         {inp('title', 'Event name')}
         <div className="grid2">
-          {inp('date', 'Date', 'date')}
-          {inp('oshi', 'Group')}
+          {inp('date', 'Date (first day)', 'date')}
+          {inp('end', 'Last day, if it runs over several days', 'date')}
         </div>
-        {inp('venue', 'Venue')}
+        <div className="grid2">
+          {inp('oshi', 'Group')}
+          {inp('venue', 'Venue')}
+        </div>
         <div className="grid2">
           {inp('open', 'OPEN', 'time')}
           {inp('start', 'START', 'time')}
@@ -517,6 +524,37 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
           {inp('amount', 'Ticket / entry (¥)', 'number')}
         </div>
         {area('note', 'Memo', 3, 'Setlist, who you went with, how it felt…')}
+        {photoBlock(false)}
+      </>
+    );
+  } else if (k === 'sign') {
+    body = (
+      <>
+        <p className="hint">Photos they sign live on stream, with your name and a message, then post to you.</p>
+        {inp('title', 'Which ネットサイン会')}
+        <div className="fld">
+          <label htmlFor="f-oshi">Member</label>
+          {recentMembers.length ? chips(recentMembers.map((m) => [m, m]), fv.oshi, (v) => set({ oshi: v }), false) : null}
+          <input id="f-oshi" list="oshi-names" autoComplete="off" placeholder="Member name" value={fv.oshi ?? ''} onChange={(e) => set({ oshi: e.target.value })} />
+        </div>
+        <div className="grid3">
+          {inp('date', 'Date of the stream', 'date')}
+          {inp('qty', 'Photos', 'number')}
+          {inp('unit', 'Price each (¥)', 'number', { placeholder: '2000' })}
+        </div>
+        <div className="cost">
+          <span className="small">Paid in total</span>
+          <b className="num">{yen(fv.amountManual ? +(fv.amount ?? 0) : autoCost)}</b>
+          <button type="button" className="btn ghost sm" onClick={() => set({ amountManual: !fv.amountManual, amount: fv.amountManual ? fv.amount : autoCost })}>
+            {fv.amountManual ? 'Use auto' : 'Change'}
+          </button>
+          {fv.amountManual ? <div style={{ flexBasis: '100%' }}>{inp('amount', 'Total (¥)', 'number')}</div> : null}
+        </div>
+        {area('note', 'What you asked for (name, request)', 2, '本名 + HN、リクエストなど')}
+        {area('talk', 'What they wrote', 3, 'Copy the message once the photo arrives')}
+        <label className="switch">
+          <input type="checkbox" checked={!!fv.arrived} onChange={(e) => set({ arrived: e.target.checked })} /> The signed photo has arrived
+        </label>
         {photoBlock(false)}
       </>
     );

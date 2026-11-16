@@ -11,9 +11,11 @@ It runs in the browser and installs to your phone's home screen. Your entries st
 - **特典会 loops** — who, how many chekis, 特典 used (新規無料, 遠征特典…), automatic cost, and a talk memo where Return switches between 推： and 私：. Save & next loop numbers the next one for you.
 - **Cheki scanner** — finds the white instax frame (mini, square, wide), lets you drag the corners with a magnifier, straightens it and fixes the colours.
 - **Face suggestions** — add a few face photos per member and the app suggests who's in a new cheki. Runs entirely on your device.
-- **Lives** — total lives, lives per month, venues, chekis by member, milestones, and a page per live with its 入場番号 and everything that happened.
+- **Group calendars** — follow a group once (MAGICAL SPEC to start) and its lives and ネットサイン会 show up in the app by themselves. Tick the ones you went to; the rest stop asking. Lives over several days (超天神祭, TIF…) come in as one live with both days.
+- **Lives** — 対バン, ワンマン, 大特典会 and オフ会; total lives, lives per month, venues, chekis by member, milestones, and a page per live with its 入場番号 and everything that happened.
 - **Import lives** — paste X announcements, a monthly schedule or a TimeTree event shared as text, or open a calendar file (.ics), then tick the lives you actually went to. Ticket-sale dates are skipped and lives already in your log are flagged. The Live form can also fill itself from one pasted post.
 - **Ticket wallet** — tickets bought ahead (まとめ買い), how many are left, and a warning a week before they expire.
+- **ネットサイン会** — its own tab for photos signed on stream: what you ordered, the message they wrote, and whether it has arrived.
 - **Marche** — photos and video messages with the message written for you.
 - **Merch, travel & food, collabs.**
 - **Recaps** — month, quarter or year, with spending you can hide until you choose to reveal it.
@@ -41,7 +43,11 @@ The publishable key is meant to be used in apps. Row level security in the schem
 
 ## Getting events out of TimeTree
 
-TimeTree ended its official API (Connect App) on December 22, 2023, so Oshi Log can't read TimeTree directly. Two ways that work:
+TimeTree ended its official API (Connect App) on December 22, 2023, so Oshi Log can't read TimeTree directly.
+
+**Group calendars** live in `public/feeds/` (one JSON file per group, listed in `index.json`). They are refreshed by reading the group's public TimeTree calendar page and merging it with `scripts/update-feed.mjs`, which drops birthday and trip markers, cancellations and other non-events, and turns "(11/22–11/23)" ranges into multi-day lives. Every push redeploys the app, and the app picks up the new calendar the next time it's opened.
+
+For your own calendars there are two more ways:
 
 - **Share as text:** in TimeTree, share an event as text and paste it into *Lives → Import lives* or the Live form's *Paste from X or TimeTree*.
 - **Calendar file:** the unofficial [timetree-exporter](https://pypi.org/project/timetree-exporter/) can export your calendars to `.ics`, which *Import lives* reads. It logs in with your TimeTree account and isn't affiliated with TimeTree, so it may stop working if TimeTree changes.

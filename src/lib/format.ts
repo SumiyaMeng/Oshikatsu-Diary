@@ -11,4 +11,10 @@ export function fmtDate(s?: string): string {
   const dt = new Date(y, m - 1, d);
   return `${y !== new Date().getFullYear() ? y + '/' : ''}${m}/${d} (${WD[dt.getDay()]})`;
 }
+/** "11/22 (日)–11/23 (月)" for a live over several days, otherwise the single date. */
+export function fmtRange(s?: string, e?: string): string {
+  if (!s) return '';
+  if (!e || e <= s) return fmtDate(s);
+  return `${fmtDate(s)}–${fmtDate(e).replace(/^\d{4}\//, '')}`;
+}
 export const daysBetween = (a: string, b: string) => Math.round((Date.parse(b) - Date.parse(a)) / 864e5);

@@ -15,6 +15,10 @@ export interface Candidate {
   amount?: number;
   etype?: string;
   note?: string;
+  /** Last day for a live over several days. */
+  end?: string;
+  /** 'sign' for ネットサイン会 and other online signing sessions; lives otherwise. */
+  kind?: 'event' | 'sign';
 }
 
 /** Full-width digits and punctuation to ASCII, so ２０２６／１１／２２ and １７：３０ parse. */
@@ -78,13 +82,34 @@ function findPrice(text: string): number | undefined {
   return m ? +m[1].replace(/,/g, '') || undefined : undefined;
 }
 
-export function guessType(text: string): string | undefined {
-  if (/ワンマン|one\s*man/i.test(text)) return 'oneman';
-  if (/リリイベ|リリースイベント|release event/i.test(text)) return 'release';
-  if (/フェス|FES(?![a-z])|festival/i.test(text)) return 'fes';
-  if (/配信|オンライン|online/i.test(text)) return 'online';
-  if (/対バン|主催|出演|ライブ|LIVE/i.test(text)) return 'taiban';
-  return undefined;
+/**
+ * One of the four event types. オフ会 (hanging out: BBQ, 撮影会, trips) and 大特典会 (特典会 only, no live)
+ * are checked first; ワンマン covers solo shows and 生誕祭; anything else with a live is 対バン.
+ */
+export function guessType(text: string): string {
+  const t = normalize(text);
+  const head = t.split('\n').find((l) => l.trim()) ?? '';
+  const show = /ライブ|LIVE|公演|フェス|FES|EXPO|祭/i;
+  if (/オフ会|BBQ|バーベキュー|撮影会|花火|運動会|バスツアー|お茶会|食事会|ファンミ|決起集会|ピクニック|遠足/i.test(head) && !/EXPO|FES|フェス/i.test(head)) return 'offkai';
+  if (/手売り会/.test(head) && !/無銭/.test(head)) return 'tokuten';
+  if (/特典会/.test(head) && !show.test(head.replace(/特典会/g, ''))) return 'tokuten';
+  if (/ワンマン(?!前|直前)|one\s*man|単独|生誕祭|卒業公演/i.test(t)) return 'oneman';
+  return 'taiban';
+}
+
+/** True for online signing sessions (ネットサイン会, ネットチェキ会, オンラインサイン会), which are logged apart from lives. */
+export const isSignSession = (title: string) => /ネットサイン|ネットチェキ|オンラインサイン|オンラインチェキ|サイン会/.test(normalize(title));
+
+/** Pulls a "(11/22–11/23)" or "11/22〜23" day range out of a title. */
+export function titleRange(title: string, date: string): { title: string; end?: string } {
+  const m = normalize(title).match(/\s*[(（]?\s*(\d{1,2})\/(\d{1,2})\s*[–\-~]\s*(?:(\d{1,2})\/)?(\d{1,2})\s*[)）]?\s*$/);
+  if (!m) return { title };
+  const [y] = date.split('-').map(Number);
+  const sm = +m[1],
+    em = m[3] ? +m[3] : sm,
+    ed = +m[4];
+  const end = ymd(em < sm ? y + 1 : y, em, ed);
+  return { title: title.slice(0, normalize(title).length - m[0].length).trim() || title, end: end > date ? end : undefined };
 }
 
 const LABELS = /^(公演決定|出演決定|情報解禁|解禁|告知|お知らせ|追加公演|チケット|ticket|info|INFO|NEWS|news|再掲|スケジュール|schedule)$/;
@@ -146,7 +171,7 @@ export function parseEventText(text: string, todayStr: string): Candidate[] {
     const venue = findVenue(seg.lines, seg.rest);
     const times = findTimes(showLines.join('\n'));
     const note = seg.lines.filter((l) => !/^#|^https?:\/\//.test(l)).join('\n').slice(0, 400);
-    out.push({ key: `${seg.date}|${title}|${venue}`, date: seg.date, title, venue, ...times, amount: findPrice(body), etype: guessType(body), note });
+    out.push({ key: `${seg.date}|${title}|${venue}`, date: seg.date, title, venue, ...times, amount: findPrice(body), etype: guessType(`${title}\n${body}`), note, kind: isSignSession(title) ? 'sign' : 'event' });
   }
   return dedupe(out);
 }
@@ -178,11 +203,21 @@ export function parseICS(text: string): Candidate[] {
       date = `${m[1]}-${m[2]}-${m[3]}`;
       start = m[4] ? `${m[4]}:${m[5]}` : undefined;
     }
-    const title = unescapeICS(props.SUMMARY?.value ?? '').trim();
+    let title = unescapeICS(props.SUMMARY?.value ?? '').trim();
     const venue = unescapeICS(props.LOCATION?.value ?? '').trim();
     const note = unescapeICS(props.DESCRIPTION?.value ?? '').trim();
     const t = findTimes(note);
-    out.push({ key: `${date}|${title}|${venue}`, date, title, venue, open: t.open, start: t.start ?? start, amount: findPrice(note), etype: guessType(`${title}\n${note}`), note: note.slice(0, 400) });
+    let end: string | undefined;
+    const de = props.DTEND?.value.match(/^(\d{4})(\d{2})(\d{2})(T)?/);
+    if (de) {
+      // An all-day DTEND is the day after the last day.
+      const last = de[4] ? `${de[1]}-${de[2]}-${de[3]}` : iso(new Date(+de[1], +de[2] - 1, +de[3] - 1));
+      if (last > date) end = last;
+    }
+    const r = titleRange(title, date);
+    title = r.title;
+    end = end ?? r.end;
+    out.push({ key: `${date}|${title}|${venue}`, date, end, title, venue, open: t.open, start: t.start ?? start, amount: findPrice(note), etype: guessType(`${title}\n${note}`), note: note.slice(0, 400), kind: isSignSession(title) ? 'sign' : 'event' });
   }
   return dedupe(out).sort((a, b) => a.date.localeCompare(b.date));
 }

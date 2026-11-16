@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { EntryForm, type FormInit } from './components/EntryForm';
 import { ImportLives } from './components/ImportLives';
+import type { Candidate } from './lib/importers';
 import { DataCtx, ToastHost, type Data } from './components/ui';
 import { today, yen } from './lib/format';
-import { useEntries, useMembers, useSettings, useSync } from './lib/hooks';
+import { useEntries, useFeeds, useMembers, useSettings, useSync } from './lib/hooks';
 import { chekisOf, openWallets, sumAmt } from './lib/logic';
 import { init as initSync } from './lib/sync';
 import { toast } from './lib/toast';
@@ -13,12 +14,14 @@ import { LivesView } from './views/LivesView';
 import { LogView } from './views/LogView';
 import { MoreView } from './views/MoreView';
 import { RecapView } from './views/RecapView';
+import { SignView } from './views/SignView';
 import { WalletView } from './views/WalletView';
 
-type View = 'log' | 'lives' | 'wallet' | 'recap' | 'more' | 'event';
+type View = 'log' | 'lives' | 'sign' | 'wallet' | 'recap' | 'more' | 'event';
 const TABS: [View, string][] = [
   ['log', 'Log'],
   ['lives', 'Lives'],
+  ['sign', 'サイン会'],
   ['wallet', 'Wallet'],
   ['recap', 'Recap'],
   ['more', 'More'],
@@ -38,6 +41,8 @@ export function App() {
   const [form, setForm] = useState<FormInit | null>(null);
   const [revealed, setRevealed] = useState<Set<string>>(new Set());
   const [importing, setImporting] = useState(false);
+  const [sorting, setSorting] = useState<{ group: string; list: Candidate[] } | null>(null);
+  const feeds = useFeeds(settings?.feeds);
 
   useEffect(() => {
     void initSync();
@@ -62,16 +67,17 @@ export function App() {
       go('event');
     } else setForm({ id: e.id });
   };
-  const newEntry = (kind: Kind, evId?: string) => setForm({ kind, eventId: evId ?? (view === 'event' ? eventId ?? undefined : undefined) });
+  const newEntry = (kind: Kind, evId?: string, preset?: Partial<Entry>) => setForm({ kind, preset, eventId: evId ?? (view === 'event' ? eventId ?? undefined : undefined) });
+  const kindForView = (): Kind => (view === 'lives' ? 'event' : view === 'wallet' ? 'wallet' : view === 'sign' ? 'sign' : 'tkk');
   const memo = () => newEntry('tkk');
 
   useEffect(() => {
     const key = (ev: KeyboardEvent) => {
       const t = ev.target as HTMLElement;
-      if (form || importing || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      if (form || importing || sorting || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || ev.metaKey || ev.ctrlKey || ev.altKey) return;
       const k = ev.key.toLowerCase();
       if (k === 'm') (ev.preventDefault(), memo());
-      else if (k === 'n') (ev.preventDefault(), newEntry(view === 'lives' ? 'event' : view === 'wallet' ? 'wallet' : 'tkk'));
+      else if (k === 'n') (ev.preventDefault(), newEntry(kindForView()));
       else if (k === 'l') (ev.preventDefault(), newEntry('event'));
       else if (k === '/') {
         ev.preventDefault();
@@ -84,8 +90,8 @@ export function App() {
   });
 
   useEffect(() => {
-    document.documentElement.classList.toggle('locked', !!form || importing);
-  }, [form, importing]);
+    document.documentElement.classList.toggle('locked', !!form || importing || !!sorting);
+  }, [form, importing, sorting]);
 
   if (!data) return <p className="status">Opening your log…</p>;
   const ym = today().slice(0, 7);
@@ -122,7 +128,8 @@ export function App() {
         <div className="layout">
           <main className="main">
             {view === 'log' ? <LogView onOpen={open} onNew={(k) => newEntry(k)} onWallet={() => go('wallet')} /> : null}
-            {view === 'lives' ? <LivesView onOpen={open} onNewEvent={() => newEntry('event')} onImport={() => setImporting(true)} /> : null}
+            {view === 'lives' ? <LivesView onOpen={open} onNewEvent={() => newEntry('event')} onImport={() => setImporting(true)} feeds={feeds} onSort={(f, list) => setSorting({ group: f.group, list })} /> : null}
+            {view === 'sign' ? <SignView feeds={feeds} onOpen={open} onNew={(p) => newEntry('sign', undefined, { qty: 1, ...p })} /> : null}
             {view === 'event' && eventId ? <EventView id={eventId} onBack={() => go('lives')} onOpen={open} onNew={(k, id) => newEntry(k, id)} onEdit={(id) => setForm({ id })} /> : null}
             {view === 'wallet' ? <WalletView onOpen={open} onBuy={() => newEntry('wallet')} /> : null}
             {view === 'recap' ? <RecapView onOpen={open} revealed={revealed} onReveal={(k) => setRevealed(new Set(revealed).add(k))} /> : null}
@@ -169,13 +176,13 @@ export function App() {
           </aside>
         </div>
       </div>
-      {!form && !importing ? (
+      {!form && !importing && !sorting ? (
         <div className="dock">
           <div className="in">
             <button className="btn primary" type="button" onClick={memo}>
               特典会 memo <small>write it before you forget</small>
             </button>
-            <button className="btn sec" type="button" onClick={() => newEntry(view === 'lives' ? 'event' : view === 'wallet' ? 'wallet' : 'tkk')}>
+            <button className="btn sec" type="button" onClick={() => newEntry(kindForView())}>
               ＋ Add
             </button>
           </div>
@@ -189,6 +196,16 @@ export function App() {
             setImporting(false);
             toast(`Added ${n} live${n === 1 ? '' : 's'}`);
             go('lives');
+          }}
+        />
+      ) : null}
+      {sorting ? (
+        <ImportLives
+          preset={sorting}
+          onClose={() => setSorting(null)}
+          onDone={(n) => {
+            setSorting(null);
+            toast(`Added ${n} to your log`);
           }}
         />
       ) : null}

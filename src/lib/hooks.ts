@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, getSettings } from './db';
+import { getSorted, loadFeed, loadIndex, type Feed, type FeedInfo } from './feeds';
 import { fetchRemotePhoto, getSyncState, subscribeSync, type SyncState } from './sync';
 import type { Entry, Member, Settings } from './types';
 
@@ -52,4 +53,33 @@ export function usePhotoURL(id: string | undefined): { url?: string; type?: stri
     };
   }, [id]);
   return res;
+}
+
+/** Calendars that ship with the app, the ones the user follows, and which events they already sorted. */
+export function useFeeds(followed: string[] | undefined) {
+  const [index, setIndex] = useState<FeedInfo[] | null>(null);
+  const [feeds, setFeeds] = useState<Record<string, Feed>>({});
+  const [error, setError] = useState(false);
+  const sorted = useLiveQuery(() => getSorted(), []);
+  const ids = (followed ?? []).join(',');
+  useEffect(() => {
+    let alive = true;
+    loadIndex()
+      .then((x) => alive && setIndex(x))
+      .catch(() => alive && setError(true));
+    return () => {
+      alive = false;
+    };
+  }, []);
+  useEffect(() => {
+    let alive = true;
+    for (const id of ids ? ids.split(',') : [])
+      loadFeed(id)
+        .then((f) => alive && setFeeds((cur) => ({ ...cur, [id]: f })))
+        .catch(() => alive && setError(true));
+    return () => {
+      alive = false;
+    };
+  }, [ids]);
+  return { index, feeds: Object.fromEntries(Object.entries(feeds).filter(([id]) => (followed ?? []).includes(id))), sorted: sorted ?? new Set<string>(), error };
 }

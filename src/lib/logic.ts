@@ -4,21 +4,26 @@ import { iso } from './format';
 export const KIND_LABEL: Record<Kind, string> = {
   tkk: '特典会',
   event: 'Live / event',
+  sign: 'ネットサイン会',
   photo: 'Marche',
   merch: 'Merch',
   travel: 'Travel & food',
   collab: 'Collab',
   wallet: 'Tickets bought',
 };
-export const PICK_KINDS: Kind[] = ['tkk', 'event', 'photo', 'merch', 'wallet', 'travel', 'collab'];
+export const PICK_KINDS: Kind[] = ['tkk', 'event', 'sign', 'photo', 'merch', 'wallet', 'travel', 'collab'];
+/** The four kinds of event. ワンマン and 対バン both have a live; 大特典会 is 特典会 only; オフ会 is hanging out, no live. */
 export const EVENT_TYPES: Record<string, string> = {
-  oneman: 'ワンマン',
   taiban: '対バン',
-  release: 'リリイベ',
-  fes: 'フェス',
-  online: '配信 / online',
-  other: 'Other',
+  oneman: 'ワンマン',
+  tokuten: '大特典会',
+  offkai: 'オフ会',
 };
+/** Maps any stored type, including ones from older versions (リリイベ, フェス…), onto the four above. */
+export const etypeOf = (t?: string): string => (t && t in EVENT_TYPES ? t : 'taiban');
+export const etypeLabel = (t?: string) => EVENT_TYPES[etypeOf(t)];
+/** Days a live runs, counting both ends. */
+export const daysOf = (e: Pick<Entry, 'date' | 'end'>) => (e.end && e.end > e.date ? Math.round((Date.parse(e.end) - Date.parse(e.date)) / 864e5) + 1 : 1);
 export const CHEKI_TYPES: Record<string, string> = {
   cheki: 'チェキ',
   two: '2ショット',
@@ -146,7 +151,7 @@ export function livesStats(items: Entry[], todayStr: string, group = '') {
     venues: new Set(past.map((e) => e.venue).filter(Boolean)).size,
     first,
     spent: past.reduce((s, e) => s + eventCost(e, items), 0),
-    byType: count(past, (e) => e.etype || 'other'),
+    byType: count(past, (e) => etypeOf(e.etype)),
     byVenue: count(past, (e) => e.venue).slice(0, 5),
     byMember: count(rel, (e) => (chekisOf(e) ? e.oshi : undefined), chekisOf).slice(0, 8),
   };
