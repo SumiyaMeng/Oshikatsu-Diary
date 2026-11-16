@@ -43,6 +43,8 @@ function skip(title) {
   if (/✨/.test(t)) return true;
   if (/^.{0,8}遠征$/.test(t.replace(/[【】\[\]]/g, ''))) return true;
   if (/休演|中止|延期|結成日|見学|ラジオ|radio|お礼配信/i.test(t)) return true;
+  // Public holidays that some TimeTree views draw on the calendar.
+  if (/^(元日|元旦|成人の日|建国記念の日|天皇誕生日|春分の日|昭和の日|憲法記念日|みどりの日|こどもの日|海の日|山の日|敬老の日|秋分の日|スポーツの日|体育の日|文化の日|勤労感謝の日|振替休日|国民の休日|休日|大晦日|クリスマス(イブ)?)$/.test(t)) return true;
   return false;
 }
 

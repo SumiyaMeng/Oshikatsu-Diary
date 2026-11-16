@@ -1,7 +1,7 @@
 // Paste into the browser on a TimeTree public calendar month page
 // (https://timetreeapp.com/public_calendars/<id>?monthly=YYYY-MM-01, ideally with a tall window so no day overflows).
 // Returns a JSON array of { date, end?, title } for events that start in that month, reading the month grid.
-// A multi-day event split across a week boundary is joined back into one.
+// A multi-day event split across a week boundary is joined back into one. Works for Sunday- and Monday-start weeks.
 (async () => {
   const mp = new URLSearchParams(location.search).get('monthly');
   let g;
@@ -21,8 +21,9 @@
     wk[i + 1] = w;
   });
   const [y, m] = mp.split('-').map(Number);
-  const first = new Date(Date.UTC(y, m - 1, 1));
-  const start = new Date(first.getTime() - ((first.getUTCDay() + 6) % 7) * 864e5);
+  // The grid starts on Sunday or Monday depending on the viewer's settings: read the first day cell.
+  const day0 = +[...g.children].map((d) => d.textContent.trim()).find((t) => /^\d{1,2}$/.test(t));
+  const start = day0 === 1 ? new Date(Date.UTC(y, m - 1, 1)) : new Date(Date.UTC(y, m - 2, day0));
   const iso = (d) => d.toISOString().slice(0, 10);
   const segs = [];
   for (const d of g.children) {
@@ -32,9 +33,9 @@
     const st = new Date(start.getTime() + (wk[v(1)] * 7 + v(0) - 1) * 864e5);
     segs.push({ s: iso(st), e: iso(new Date(st.getTime() + (v(2) - 1) * 864e5)), t: d.textContent.trim(), col: v(0) });
   }
-  // Join a Sunday segment with the Monday segment of the same event (placeholders like 予定 stay separate).
+  // Join a segment ending on the last day of a week row with the same event at the start of the next row (placeholders like 予定 stay separate).
   for (const a of segs) {
-    if (new Date(a.e).getUTCDay() !== 0 || a.gone || /予定|\(仮\)/.test(a.t)) continue;
+    if ((Date.parse(a.e) - Date.parse(start.toISOString().slice(0, 10))) / 864e5 % 7 !== 6 || a.gone || /予定|\(仮\)/.test(a.t)) continue;
     const b = segs.find((z) => z !== a && z.col === 1 && z.t === a.t && Date.parse(z.s) - Date.parse(a.e) === 864e5);
     if (b) {
       a.e = b.e;
