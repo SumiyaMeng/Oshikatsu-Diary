@@ -28,6 +28,9 @@ export interface Entry {
   /** Live / event */
   etype?: string;
   number?: string;
+  /** Doors and show times, HH:MM. */
+  open?: string;
+  start?: string;
 
   /** 特典会 loop */
   talk?: string;
