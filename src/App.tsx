@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { EntryForm, type FormInit } from './components/EntryForm';
+import { ImportLives } from './components/ImportLives';
 import { DataCtx, ToastHost, type Data } from './components/ui';
 import { today, yen } from './lib/format';
 import { useEntries, useMembers, useSettings, useSync } from './lib/hooks';
 import { chekisOf, openWallets, sumAmt } from './lib/logic';
 import { init as initSync } from './lib/sync';
+import { toast } from './lib/toast';
 import type { Entry, Kind } from './lib/types';
 import { EventView } from './views/EventView';
 import { LivesView } from './views/LivesView';
@@ -35,6 +37,7 @@ export function App() {
   const [eventId, setEventId] = useState<string | null>(null);
   const [form, setForm] = useState<FormInit | null>(null);
   const [revealed, setRevealed] = useState<Set<string>>(new Set());
+  const [importing, setImporting] = useState(false);
 
   useEffect(() => {
     void initSync();
@@ -65,7 +68,7 @@ export function App() {
   useEffect(() => {
     const key = (ev: KeyboardEvent) => {
       const t = ev.target as HTMLElement;
-      if (form || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      if (form || importing || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || ev.metaKey || ev.ctrlKey || ev.altKey) return;
       const k = ev.key.toLowerCase();
       if (k === 'm') (ev.preventDefault(), memo());
       else if (k === 'n') (ev.preventDefault(), newEntry(view === 'lives' ? 'event' : view === 'wallet' ? 'wallet' : 'tkk'));
@@ -81,8 +84,8 @@ export function App() {
   });
 
   useEffect(() => {
-    document.documentElement.classList.toggle('locked', !!form);
-  }, [form]);
+    document.documentElement.classList.toggle('locked', !!form || importing);
+  }, [form, importing]);
 
   if (!data) return <p className="status">Opening your log…</p>;
   const ym = today().slice(0, 7);
@@ -119,7 +122,7 @@ export function App() {
         <div className="layout">
           <main className="main">
             {view === 'log' ? <LogView onOpen={open} onNew={(k) => newEntry(k)} onWallet={() => go('wallet')} /> : null}
-            {view === 'lives' ? <LivesView onOpen={open} onNewEvent={() => newEntry('event')} /> : null}
+            {view === 'lives' ? <LivesView onOpen={open} onNewEvent={() => newEntry('event')} onImport={() => setImporting(true)} /> : null}
             {view === 'event' && eventId ? <EventView id={eventId} onBack={() => go('lives')} onOpen={open} onNew={(k, id) => newEntry(k, id)} onEdit={(id) => setForm({ id })} /> : null}
             {view === 'wallet' ? <WalletView onOpen={open} onBuy={() => newEntry('wallet')} /> : null}
             {view === 'recap' ? <RecapView onOpen={open} revealed={revealed} onReveal={(k) => setRevealed(new Set(revealed).add(k))} /> : null}
@@ -166,7 +169,7 @@ export function App() {
           </aside>
         </div>
       </div>
-      {!form ? (
+      {!form && !importing ? (
         <div className="dock">
           <div className="in">
             <button className="btn primary" type="button" onClick={memo}>
@@ -179,6 +182,16 @@ export function App() {
         </div>
       ) : null}
       {form ? <EntryForm key={JSON.stringify(form)} init={form} onClose={() => setForm(null)} /> : null}
+      {importing ? (
+        <ImportLives
+          onClose={() => setImporting(false)}
+          onDone={(n) => {
+            setImporting(false);
+            toast(`Added ${n} live${n === 1 ? '' : 's'}`);
+            go('lives');
+          }}
+        />
+      ) : null}
       <ToastHost />
     </DataCtx.Provider>
   );

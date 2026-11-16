@@ -4,7 +4,7 @@ import { EVENT_TYPES, livesPerMonth, livesStats, nextMilestone } from '../lib/lo
 import type { Entry } from '../lib/types';
 import { Columns, EntryCard, Empty, HBars, Tile, useColor, useData } from '../components/ui';
 
-export function LivesView({ onOpen, onNewEvent }: { onOpen: (e: Entry) => void; onNewEvent: () => void }) {
+export function LivesView({ onOpen, onNewEvent, onImport }: { onOpen: (e: Entry) => void; onNewEvent: () => void; onImport: () => void }) {
   const { items, showMoney } = useData();
   const color = useColor();
   const [group, setGroup] = useState('');
@@ -13,7 +13,19 @@ export function LivesView({ onOpen, onNewEvent }: { onOpen: (e: Entry) => void; 
   const s = useMemo(() => livesStats(items, t, groups.includes(group) ? group : ''), [items, t, group, groups]);
   if (!items.some((e) => e.kind === 'event'))
     return (
-      <Empty title="No lives logged yet" actions={<button className="chip" type="button" onClick={onNewEvent}>Live / event</button>}>
+      <Empty
+        title="No lives logged yet"
+        actions={
+          <>
+            <button className="chip" type="button" onClick={onNewEvent}>
+              Live / event
+            </button>
+            <button className="chip" type="button" onClick={onImport}>
+              Import from X or a calendar
+            </button>
+          </>
+        }
+      >
         Every ワンマン, 対バン, リリイベ or fes becomes a page with its 入場番号, chekis, 特典会 memos and costs. Your stats build up here.
       </Empty>
     );
@@ -32,6 +44,11 @@ export function LivesView({ onOpen, onNewEvent }: { onOpen: (e: Entry) => void; 
           ))}
         </div>
       ) : null}
+      <div className="addrow" style={{ marginTop: 6 }}>
+        <button className="btn ghost sm" type="button" onClick={onImport}>
+          Import lives from X, TimeTree or a calendar
+        </button>
+      </div>
       <div className="hero" style={{ marginTop: 8 }}>
         <span className="eyebrow">Lives you've been to{group ? ' · ' + group : ''}</span>
         <div className="big">

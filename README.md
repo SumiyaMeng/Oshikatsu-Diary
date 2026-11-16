@@ -12,6 +12,7 @@ It runs in the browser and installs to your phone's home screen. Your entries st
 - **Cheki scanner** — finds the white instax frame (mini, square, wide), lets you drag the corners with a magnifier, straightens it and fixes the colours.
 - **Face suggestions** — add a few face photos per member and the app suggests who's in a new cheki. Runs entirely on your device.
 - **Lives** — total lives, lives per month, venues, chekis by member, milestones, and a page per live with its 入場番号 and everything that happened.
+- **Import lives** — paste X announcements, a monthly schedule or a TimeTree event shared as text, or open a calendar file (.ics), then tick the lives you actually went to. Ticket-sale dates are skipped and lives already in your log are flagged. The Live form can also fill itself from one pasted post.
 - **Ticket wallet** — tickets bought ahead (まとめ買い), how many are left, and a warning a week before they expire.
 - **Marche** — photos and video messages with the message written for you.
 - **Merch, travel & food, collabs.**
@@ -37,6 +38,13 @@ Sync uses your own [Supabase](https://supabase.com) project, so your data is nev
 6. Press **Create account** with your email and a password, confirm the email, then sign in. Sign in with the same account on your other devices.
 
 The publishable key is meant to be used in apps. Row level security in the schema makes sure only your account can read your rows and photos.
+
+## Getting events out of TimeTree
+
+TimeTree ended its official API (Connect App) on December 22, 2023, so Oshi Log can't read TimeTree directly. Two ways that work:
+
+- **Share as text:** in TimeTree, share an event as text and paste it into *Lives → Import lives* or the Live form's *Paste from X or TimeTree*.
+- **Calendar file:** the unofficial [timetree-exporter](https://pypi.org/project/timetree-exporter/) can export your calendars to `.ics`, which *Import lives* reads. It logs in with your TimeTree account and isn't affiliated with TimeTree, so it may stop working if TimeTree changes.
 
 ## Privacy
 

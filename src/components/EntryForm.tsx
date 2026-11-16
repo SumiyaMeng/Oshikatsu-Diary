@@ -4,6 +4,7 @@ import { deleteEntry, saveEntry, savePhoto } from '../lib/db';
 import { blobToImage, findFaces, matchFaces, type FaceMatch } from '../lib/face';
 import { fmtDate, today, yen } from '../lib/format';
 import { CHEKI_TYPES, COLLAB_TYPES, EVENT_TYPES, KIND_LABEL, PERKS, PICK_KINDS, cleanTalk, loopCost, nextLoop, nextSpeakerPrefix, openWallets } from '../lib/logic';
+import { parseEventText } from '../lib/importers';
 import { shrinkImage } from '../lib/scanner';
 import { toast } from '../lib/toast';
 import type { Entry, Kind } from '../lib/types';
@@ -41,7 +42,7 @@ const ls = {
 
 const FIELDS: Record<Kind, (keyof Entry)[]> = {
   tkk: ['eventId', 'oshi', 'talk', 'n', 'unit', 'chtype', 'perk', 'free', 'amount', 'loop', 'note', 'walletId'],
-  event: ['etype', 'title', 'oshi', 'venue', 'number', 'amount', 'note'],
+  event: ['etype', 'title', 'oshi', 'venue', 'number', 'amount', 'note', 'open', 'start'],
   photo: ['title', 'oshi', 'amount', 'note', 'media'],
   merch: ['title', 'oshi', 'amount', 'eventId', 'note'],
   travel: ['title', 'oshi', 'amount', 'eventId', 'note'],
@@ -80,6 +81,7 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
   const [faces, setFaces] = useState<{ status: 'idle' | 'busy' | 'none'; matches: FaceMatch[] }>({ status: 'idle', matches: [] });
   const [armed, setArmed] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [paste, setPaste] = useState<string | null>(null);
   const talkRef = useRef<HTMLTextAreaElement>(null);
   const k = fv.kind;
   const set = (patch: Partial<FV>) => setFv((v) => ({ ...v, ...patch }));
@@ -467,8 +469,35 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
       </>
     );
   } else if (k === 'event') {
+    const fill = () => {
+      const c = parseEventText(paste ?? '', today())[0];
+      if (!c) return toast("Couldn't find a date in that text.");
+      set({ date: c.date, title: c.title || fv.title, venue: c.venue || fv.venue, open: c.open ?? fv.open, start: c.start ?? fv.start, amount: c.amount ?? fv.amount, etype: c.etype ?? fv.etype, note: fv.note || c.note });
+      setPaste(null);
+      toast('Filled in from the text. Check it, then save.');
+    };
     body = (
       <>
+        {paste === null ? (
+          <button type="button" className="btn ghost sm" style={{ justifySelf: 'start' }} onClick={() => setPaste('')}>
+            Paste from X or TimeTree
+          </button>
+        ) : (
+          <div className="paste-fill">
+            <label htmlFor="f-paste" className="lbl">
+              Paste the announcement or the TimeTree event text
+            </label>
+            <textarea id="f-paste" rows={5} value={paste} onChange={(e) => setPaste(e.target.value)} autoFocus />
+            <div className="addrow">
+              <button type="button" className="btn primary sm" onClick={fill}>
+                Fill in
+              </button>
+              <button type="button" className="btn ghost sm" onClick={() => setPaste(null)}>
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
         <div className="fld">
           <span className="lbl">Type</span>
           {chips(Object.entries(EVENT_TYPES), fv.etype, (v) => set({ etype: v }))}
@@ -479,6 +508,10 @@ export function EntryForm({ init, onClose }: { init: FormInit; onClose: () => vo
           {inp('oshi', 'Group')}
         </div>
         {inp('venue', 'Venue')}
+        <div className="grid2">
+          {inp('open', 'OPEN', 'time')}
+          {inp('start', 'START', 'time')}
+        </div>
         <div className="grid2">
           {inp('number', '入場番号', 'text', { placeholder: 'e.g. A-12' })}
           {inp('amount', 'Ticket / entry (¥)', 'number')}

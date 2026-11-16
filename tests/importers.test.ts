@@ -23,7 +23,7 @@ OPEN 17:30 / START 18:00
   it('reads one show and ignores the ticket-sale date', () => {
     const r = parseEventText(post, TODAY);
     expect(r).toHaveLength(1);
-    expect(r[0]).toMatchObject({ date: '2026-11-22', title: 'パレットの向こう側', open: '17:30', start: '18:00', amount: 4000 });
+    expect(r[0]).toMatchObject({ date: '2026-11-22', title: 'パレットの向こう側', venue: '心斎橋 RIVER HALL', open: '17:30', start: '18:00', amount: 4000 });
   });
 });
 
@@ -36,7 +36,11 @@ describe('monthly schedule', () => {
     const r = parseEventText(sched, TODAY);
     expect(r.map((c) => c.date)).toEqual(['2026-11-22', '2026-11-28', '2026-12-05']);
     expect(r[0]).toMatchObject({ title: 'ネオンサーカス vol.4', venue: '渋谷NEON BOX' });
-    expect(r[1]).toMatchObject({ title: '定期公演 vol.13', etype: 'oneman' });
+    expect(r[1]).toMatchObject({ title: '定期公演 vol.13', venue: '下北沢 STAR GARAGE', etype: 'oneman' });
+  });
+  it('ignores times on ticket-sale lines', () => {
+    const r = parseEventText('11/22(日) 心斎橋 RIVER HALL「パレットの向こう側」\nチケット発売 11/1(土) 12:00〜\n11/28(土) 新宿 BLAZE', TODAY);
+    expect(r[0].start).toBeUndefined();
   });
 });
 

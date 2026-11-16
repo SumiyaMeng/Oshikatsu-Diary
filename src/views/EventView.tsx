@@ -36,6 +36,7 @@ export function EventView({ id, onBack, onOpen, onNew, onEdit }: { id: string; o
             </>
           ) : null}
           {ev.venue ? ' · ' + ev.venue : ''}
+          {ev.open || ev.start ? ' · ' + [ev.open && `OPEN ${ev.open}`, ev.start && `START ${ev.start}`].filter(Boolean).join(' / ') : ''}
         </div>
       </div>
       <div className="tiles">

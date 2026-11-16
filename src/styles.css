@@ -249,3 +249,9 @@ kbd{font:500 12px var(--f-num);border:1px solid var(--line);border-bottom-width:
 .k-wallet{--kc:var(--k-ticket)}
 .mtot .sync{margin-top:2px}
 .tabs button{white-space:nowrap}
+.pick-row{grid-template-columns:auto minmax(0,1fr);display:grid;align-items:start;gap:12px;cursor:pointer}
+.pick-row>input[type=checkbox]{width:20px;height:20px;margin-top:2px;accent-color:var(--ac)}
+.pick-body{display:grid;gap:4px;min-width:0}
+.pick-input{border:0;border-bottom:1px dashed var(--line);border-radius:0;padding:2px 0;background:transparent;font-size:15px}
+.pick-input.ctitle{font-weight:700;font-size:16px}
+.paste-fill{display:grid;gap:8px;background:var(--sunk);border-radius:12px;padding:10px}

@@ -102,6 +102,7 @@ export function EntryCard({ e, inEvent, full, onOpen }: { e: Entry; inEvent?: bo
       </span>
     ) : null,
     e.venue || null,
+    e.kind === 'event' && (e.open || e.start) ? [e.open && `OPEN ${e.open}`, e.start && `START ${e.start}`].filter(Boolean).join(' / ') : null,
     ev && !inEvent ? 'at ' + (ev.title || EVENT_TYPES[ev.etype ?? ''] || 'event') : null,
     e.kind === 'collab' && e.end ? 'until ' + fmtDate(e.end) : null,
     e.kind === 'wallet' && e.expires ? 'use by ' + fmtDate(e.expires) : null,

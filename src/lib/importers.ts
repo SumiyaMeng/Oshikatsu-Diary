@@ -41,9 +41,9 @@ export function inferYear(m: number, d: number, todayStr: string): number {
 const valid = (m: number, d: number) => m >= 1 && m <= 12 && d >= 1 && d <= 31;
 const ymd = (y: number, m: number, d: number) => iso(new Date(y, m - 1, d));
 
-const RE_FULL = /(20\d{2})\s*[/.\-年]\s*(\d{1,2})\s*[/.\-月]\s*(\d{1,2})\s*日?/;
+const RE_FULL = /(20\d{2})\s*[/.\-年]\s*(\d{1,2})\s*[/.\-月]\s*(\d{1,2})\s*日?(?:\s*[(（][^)）]{1,5}[)）])?/;
 const RE_MD_WEEKDAY = /(?<![\d:])(\d{1,2})\s*[/.月]\s*(\d{1,2})\s*日?\s*[(（]\s*([月火水木金土日祝]|mon|tue|wed|thu|fri|sat|sun)[^)）]{0,4}[)）]/i;
-const RE_MD_KANJI = /(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日/;
+const RE_MD_KANJI = /(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日(?:\s*[(（][^)）]{1,5}[)）])?/;
 const RE_MD_START = /^\s*(\d{1,2})\s*[/.]\s*(\d{1,2})(?!\s*[\d:])/;
 /** Lines that carry a date but aren't the show itself. */
 const NOT_SHOW = /(発売|受付|販売|締切|〆切|応募|抽選|当落|入金|先行|予約開始|一般|申込)/;
@@ -119,6 +119,7 @@ function findVenue(lines: string[], rest: string): string {
   }
   const r = rest
     .replace(/[「『【][^」』】]*[」』】]/g, ' ')
+    .replace(/ワンマン|対バン|リリイベ|リリースイベント|フェス|配信|主催|出演/g, ' ')
     .replace(/(?:OPEN|START|開場|開演)\s*:?\s*\d{1,2}:\d{2}/gi, ' ')
     .replace(/\d{1,2}:\d{2}\s*[~\-]?\s*(\d{1,2}:\d{2})?/g, ' ')
     .replace(/\s+/g, ' ')
@@ -139,10 +140,11 @@ export function parseEventText(text: string, todayStr: string): Candidate[] {
   const out: Candidate[] = [];
   for (const seg of segments) {
     const body = seg.lines.join('\n');
+    const showLines = seg.lines.filter((l) => !NOT_SHOW.test(l));
     const single = idx.length === 1;
     const title = findTitle(seg.lines, single ? '' : seg.rest);
-    const venue = findVenue(seg.lines, single ? '' : seg.rest);
-    const times = findTimes(body);
+    const venue = findVenue(seg.lines, seg.rest);
+    const times = findTimes(showLines.join('\n'));
     const note = seg.lines.filter((l) => !/^#|^https?:\/\//.test(l)).join('\n').slice(0, 400);
     out.push({ key: `${seg.date}|${title}|${venue}`, date: seg.date, title, venue, ...times, amount: findPrice(body), etype: guessType(body), note });
   }
